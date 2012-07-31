@@ -1,0 +1,5 @@
+<?php
+	//analytics code here
+
+
+?>
