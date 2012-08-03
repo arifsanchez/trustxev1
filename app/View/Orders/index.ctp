@@ -1,4 +1,3 @@
-
 <div class="orders index">
 	<h2><?php echo __('Orders'); ?></h2>
 	<table cellpadding="0" cellspacing="0">

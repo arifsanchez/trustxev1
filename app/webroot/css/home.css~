@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* Trust Exchange Body, Header & Navigation */
+
+body { margin: 0px; font-size:90%;background-color: #fff; font-family:Arial, Helvetica, sans-serif; background-image:url(../img/layout/trustXE_bg.gif); background-repeat:repeat-x; }
+#wrapper { margin:0 auto; padding:0; width:978px; overflow:hidden; }
+#topwrapper { width:978px; height:125px; }
+#logo { width:300px; float:left; margin-top:20px; }
+#top_menu {width:400px; float:right; margin-top:5px;text-align:right;}
+#top_menu a {font-size:12px;text-decoration:none;color:#dfdfdf;}
+#navi { clear:both;width:978px; padding:0; margin-top:20px; }
+#navi-cm { float:left; }
+
+/* Trust Exchange Small Banners - 2 BUY & SELL LR Banner + 4 Btm Small Banners */
+
+#btmwrapper { padding-top:14px; width:978px; }
+#btmwrapper .btmcolumn { margin-top:14px; float:left; width:978px; }
+#btmwrapper .buyLR{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -27px; padding-right:16px; width:481px; height:119px; }
+#btmwrapper .sellLR{ float:left; background-image:url(../img/layout/txe-btm-banners.png); background-position:506px -27px; width:481px; height:119px; }
+#btmwrapper .small-banner1{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -161px; padding-right:15px; width:233px; height:157px; }
+#btmwrapper .small-banner2{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-273px -161px; padding-right:15px; width:233px; height:157px; }
+#btmwrapper .small-banner3{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-521px -161px; padding-right:15px; width:233px; height:157px; }
+#btmwrapper .small-banner4{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-769px -161px; width:233px; height:157px; }
+
+/* Trust Exchange Data (Table) - BUY & SELL Liberty Reserve */
+
+#btmwrapper .tablecolumn{ background-image:url(../img/layout/trustXE-table.png); margin-top:14px; float:left; width:978px; height:167px; }
+
+#btmwrapper .TXE-data-BUY{ float:left; width: 490px; }
+#btmwrapper .TXE-data-BUY ul{ float:left; width:198px; text-indent:7px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold; color:#575757; font-size: 13px; padding-top:58px; line-height:20px; }
+#btmwrapper .TXE-data-BUY li{ list-style-type:none; }
+
+#btmwrapper .TXE-data-SELL{ float:left; width: 488px; }
+#btmwrapper .TXE-data-SELL ul{ float:left; width:198px; text-indent:8px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold; color:#575757; font-size: 13px; padding-top:58px; line-height:20px; }
+#btmwrapper .TXE-data-SELL li{ list-style-type:none; }
+
+
+
+
+
+
+
+
+.readmore a{ float:left; color:#ed2024; text-decoration:none; font-weight:bold; background-image:url(../img/layout/red-arrow.gif); background-repeat:no-repeat; background-position: 0px 5px; padding-left:8px; }
+
+.readmore a:hover{ color:#000000; }
+
+.vr-line { float:left; margin-top: 35px; width: 1px; height: 500px; background-color:#b1b1b1; }
+
+
+
+
+
+/* Footer */
+
+
+#footer { background-image:url(../img/layout/TXE-footer-bg.png); background-repeat:no-repeat; background-position:0 15px; margin:0 auto; width:978px; height:70px; position:relative; font-family: Arial, Helvetica, sans-serif; display:block; font-size: 12px; color: #464646; }
+#ftrright { position:relative; font-family: Arial, Helvetica, sans-serif; width: 103px; font-size: 12px; float:right; margin-right:5px; margin-top: 9px; }
+#ftrleft { position:relative; float:left; margin-left:13px; margin-top:15px; }
+
+/* .hr-line { float:left; margin-top:8px; margin-right:0pt; margin-bottom:0pt; margin-left:0pt; width:978px; height:1px; background-image:url("../img/layout/horizon-line.gif"); background-repeat:repeat-x; } */
+
+
+/*contact us pages*/
+
+#contact_main {
+height:auto;
+width:980px;
+display:block;
+text-align:justify;
+}
+
+#contact_main .sidebar{
+float:left;
+border-right:1px solid #C8C8C8;
+
+
+}
+
+#contact_main .sidebar img{
+padding-top:10px;
+}
+
+#contact_main .sidebar li {
+list-style-type: none;
+
+}
+
+#wrap_main {
+	padding:10px 15px 15px 358px;
+	
+	}
+
+
+.block1 {
+float:left;
+padding-right:30px;
+border-right:1px solid #C8C8C8;
+}
+
+p .titlecontact {
+	color: grey;
+	}
+
+.block2 {
+float:left;
+padding-left: 40px;
+}
+
+
+
+.pointer{
+list-style-image:url("../img/pointer.png");
+
+}
+
+.reason_list {
+	padding: 0 0 0 30px;
+	}

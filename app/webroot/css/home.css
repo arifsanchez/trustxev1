@@ -4,7 +4,7 @@
 
 /* Trust Exchange Body, Header & Navigation */
 
-body { margin: 0px; background-color: #fff; font-family:Arial, Helvetica, sans-serif; background-image:url(../img/layout/trustXE_bg.gif); background-repeat:repeat-x; }
+body { margin: 0px; font-size:90%;background-color: #fff; font-family:Arial, Helvetica, sans-serif; background-image:url(../img/layout/trustXE_bg.gif); background-repeat:repeat-x; }
 #wrapper { margin:0 auto; padding:0; width:978px; overflow:hidden; }
 #topwrapper { width:978px; height:125px; }
 #logo { width:300px; float:left; margin-top:20px; }
@@ -62,3 +62,57 @@ body { margin: 0px; background-color: #fff; font-family:Arial, Helvetica, sans-s
 
 /* .hr-line { float:left; margin-top:8px; margin-right:0pt; margin-bottom:0pt; margin-left:0pt; width:978px; height:1px; background-image:url("../img/layout/horizon-line.gif"); background-repeat:repeat-x; } */
 
+
+/*contact us pages*/
+
+#contact_main {
+height:auto;
+width:980px;
+display:block;
+text-align:justify;
+}
+
+#contact_main .sidebar{
+float:left;
+border-right:1px solid #C8C8C8;
+
+
+}
+
+#contact_main .sidebar img{
+padding-top:10px;
+}
+
+#contact_main .sidebar li {
+list-style-type: none;
+
+}
+
+#wrap_main {
+	padding:10px 15px 15px 358px;
+	
+	}
+
+
+.block1 {
+float:left;
+padding-right:30px;
+border-right:1px solid #C8C8C8;
+}
+
+
+.block2 {
+float:left;
+padding-left: 40px;
+}
+
+
+
+.pointer{
+list-style-image:url("../img/pointer.png");
+
+}
+
+.reason_list {
+	padding: 0 0 0 30px;
+	}

@@ -1,29 +1,13 @@
 <?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       Cake.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
 
-$cakeDescription = __d('cake_dev', 'TXE3');
+$txeDescription = __d('cake_dev', 'TXE3');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo $txeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
@@ -85,6 +69,7 @@ $cakeDescription = __d('cake_dev', 'TXE3');
 					echo $this->Html->link('LOGIN', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'), array('class' => 'login_top'));
 				} else {
 					echo $this->Html->link('User Cabinet',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'myprofile'), array('class' => 'register_top'));
+					echo $this->Html->link('My Orders',  array('plugin' => '', 'controller' => 'orders', 'action' => 'index'), array('class' => 'register_top'));
 					echo $this->Html->link('LOGOUT',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'logout'), array('class' => 'login_top'));
 				}
 			?>
@@ -94,14 +79,14 @@ $cakeDescription = __d('cake_dev', 'TXE3');
 	</div>
 
 	<?php echo $this->element('sliding_banner'); ?>
-
+	<?php echo $this->Session->flash(); ?>
 	<?php echo $this->fetch('content'); ?>
 </div>
 <div id="footer"> 
 
 	<div id="ftrleft">
 		<?php $base = $this->webroot; ?>
-		<strong>©</strong> 2012 TrustXE.com . Wholly Owned by IK Worldwide Solution . All Rights Reserved.<span style="float:right;">Join us on&nbsp;
+		<strong>&copy;</strong> 2012 TrustXE.com . Wholly Owned by IK Worldwide Solution . All Rights Reserved. <span style="text-align:right;">Join us on&nbsp;
 		<a href="https://www.facebook.com/pages/Trust-XE-Trust-Exchange/415589978472347" target="_blank">
 			<img src="<?php echo $base; ?>/img/layout/fb.png" alt="Facebook - TrustXE" width="26" height="26" style="vertical-align:middle">
 		</a></span>

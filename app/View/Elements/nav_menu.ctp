@@ -39,7 +39,7 @@
 	<div id="navi-cm">
 		<?php echo $this->Html->link(
 			$this->Html->image('layout/txe-menu-contact.gif', array('id' => 'Image6', 'name' => 'Image6')), 
-			"/pages/contact",
+			"/pages/contact_us",
 			array('escape' => false,'onmouseout' => 'MM_swapImgRestore()',
 			'onmouseover' => 'MM_swapImage(\'Image6\', \'\', \'/TrustXE/core/img/layout/txe-menu-contactON.gif\',1)')
 		);?>

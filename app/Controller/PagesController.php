@@ -72,4 +72,28 @@ class PagesController extends AppController {
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
+	
+	public function home(){
+		//any special code letak disini
+	}
+	
+	public function buy_liberty_reserve(){
+		//any special code letak disini
+	}
+	
+	public function sell_liberty_reserve(){
+		//any special code letak disini
+	}
+	
+	public function about_us(){
+		//any special code letak disini
+	}
+	
+	public function contact_us(){
+		//any special code letak disini
+	}
+	
+	public function support(){
+		//any special code letak disini
+	}
 }
