@@ -23,9 +23,11 @@ $txeDescription = __d('cake_dev', 'TXE3');
 		echo $this->Html->css('/usermgmt/css/umstyle');
 		
 		echo $this->Html->script(array(
+					
 				'home',
 				'jquery-1.7.2.min',
 				'jquery.nivo.slider.pack',
+				
 		));
 		
 		echo $this->fetch('meta');
@@ -67,13 +69,14 @@ $txeDescription = __d('cake_dev', 'TXE3');
 			<?php   
 				if ($this->UserAuth->getGroupName()=='') {
 					echo $this->Html->link('REGISTER', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'register'), array('class' => 'register_top'));
-					echo $this->Html->link('LOGIN', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'), array('class' => 'login_top'));
+					echo $this->Html->link('LOGIN', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'), array('class' => 'login_top'));*/
 				} else {
 					echo $this->Html->link('User Cabinet',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'myprofile'), array('class' => 'register_top'));
 					echo $this->Html->link('My Orders',  array('plugin' => '', 'controller' => 'orders', 'action' => 'index'), array('class' => 'register_top'));
 					echo $this->Html->link('LOGOUT',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'logout'), array('class' => 'login_top'));
 				}
 			?>
+			
 		</div>
 
 		<?php echo $this->element('nav_menu'); ?>

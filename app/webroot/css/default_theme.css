@@ -71,7 +71,7 @@ Author URI: http://dev7studios.com
     color:#fff;
 }
 
-.login_top {
+.login-window, .login_top {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
@@ -98,9 +98,6 @@ Author URI: http://dev7studios.com
 	text-shadow:
 		0px -1px 0px rgba(000,000,000,0.4),
 		0px 1px 0px rgba(255,255,255,0.3);
-
-	
-	
 	
 }
 

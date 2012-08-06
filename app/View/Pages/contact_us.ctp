@@ -14,23 +14,23 @@
 		<h4>Head Office</h4>
 	 	<br/ >
 		<div class="block1">
-		<span style="color:#0173BA;font-weight:bold;font-size:110%;">Trust XE traders Market</span><br/ >
-		<p><address>Suite C-3A-06, Block C, Plaza Mont Kiara<br/ >
-		No. 2, Jalan Kiara, Mont Kiara<br/ >
-		50480, Kuala Lumpur, Malaysia.</address></p>
+		<span style="color:#0173BA;font-weight:bold;font-size:110%;">Trust Exchange</span><br/ >
+		<p><address>
+			Level 8, Retail Office Block, Pavilion KL,<br/>
+			168 Jalan Bukit Bintang,<br/>
+			55100 Kuala Lumpur, Malaysia.
+		</address></p>
 		<p>Office Fax : +603-6201 6532</p>	
 		</div>
 
 		<div class="block2">
-		<span style="color:#0173BA;font-weight:bold;font-size:110%;">Customer Support Direct Line</span><br/ ><br/ >
-		<ul class="pointer">
-		<li>+603 - 6201 1532</li>
-		<li>+603 - 6201 2532</li>
-		<li>+603 - 6201 5532</li>
-		<li>+603 - 6201 6532</li>		
-		</ul>	
+			<span style="color:#0173BA;font-weight:bold;font-size:110%;">Customer Support Direct Line</span><br/ ><br/ >
+			<ul class="pointer">
+			<li>+603 - 6201 1532</li>
+			<li>+603 - 6201 2532</li>
+			<li>+603 - 6201 5532</li>
+			<li>+603 - 6201 6532</li>		
+			</ul>	
 		</div>
-
-		
 	</div>	
 </div> 

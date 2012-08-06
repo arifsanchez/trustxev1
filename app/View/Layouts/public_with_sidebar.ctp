@@ -93,14 +93,13 @@ $txeDescription = __d('cake_dev', 'TXE3');
 							</p>        
 						</fieldset>
 					<?php echo $this->Form->end(); ?>
-				</div>	
+				</div>
 			<?php
 				} else {
 					echo $this->Html->link('User Cabinet',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'myprofile'), array('class' => 'register_top'));
 					echo $this->Html->link('LOGOUT',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'logout'), array('class' => 'login_top'));
 				}
 			?>
-				
 			
 		</div>
 
@@ -110,7 +109,19 @@ $txeDescription = __d('cake_dev', 'TXE3');
 	<?php echo $this->element('sliding_banner'); ?>
 	<?php echo $this->Session->flash(); ?>
 	<div id="content">
-	<?php echo $this->fetch('content'); ?>
+		<div id="contact_main">
+			<div class="sidebar">
+			  <ul>        
+				  <li><a href="#"><?php echo $this->Html->image('contactus/buyliberty.png');?></a></li> 
+			      <li><a href="#"><?php echo $this->Html->image('contactus/sellliberty.png');?></a></li> 
+				  <li><a href="#"><?php echo $this->Html->image('contactus/csl.png');?></a></li> 
+			  </ul>	
+			</div>
+			<div id="wrap_main">
+				<?php echo $this->fetch('content'); ?>
+			</div>	
+		</div> 
+		
 	</div>
 </div>
 <div id="footer"> 
