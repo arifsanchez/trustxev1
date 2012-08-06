@@ -18,6 +18,7 @@ $txeDescription = __d('cake_dev', 'TXE3');
 			'home',
 			'default_theme',
 			'cake.generic',
+			'login',
 		));
 		echo $this->Html->css('/usermgmt/css/umstyle');
 		
@@ -25,6 +26,7 @@ $txeDescription = __d('cake_dev', 'TXE3');
 				'home',
 				'jquery-1.7.2.min',
 				'jquery.nivo.slider.pack',
+				'login',
 		));
 		
 		echo $this->fetch('meta');

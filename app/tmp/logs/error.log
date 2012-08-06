@@ -38678,3 +38678,22 @@
 2012-08-03 10:39:35 Error: [MissingControllerException] Controller class ImgController could not be found.
 #0 /opt/lampp/htdocs/TXE3/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-08-03 18:04:34 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /opt/lampp/htdocs/TXE3/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-08-03 12:07:53 Error: [MissingViewException] View file "/opt/lampp/htdocs/TXE3/app/View/Pages/img/spacer.gif.ctp" is missing.
+#0 /opt/lampp/htdocs/TXE3/lib/Cake/View/View.php(472): View->_getViewFileName('img/spacer.gif')
+#1 /opt/lampp/htdocs/TXE3/lib/Cake/Controller/Controller.php(957): View->render('img/spacer.gif', NULL)
+#2 /opt/lampp/htdocs/TXE3/app/Controller/PagesController.php(73): Controller->render('img/spacer.gif')
+#3 [internal function]: PagesController->display('img', 'spacer.gif')
+#4 /opt/lampp/htdocs/TXE3/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /opt/lampp/htdocs/TXE3/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /opt/lampp/htdocs/TXE3/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /opt/lampp/htdocs/TXE3/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-08-06 05:51:34 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /opt/lampp/htdocs/TXE3/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-08-06 08:36:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /opt/lampp/htdocs/TXE3/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
