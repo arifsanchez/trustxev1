@@ -135,7 +135,7 @@ class OrdersController extends AppController {
 			$this->Order->create();
 			if ($this->Order->save($this->request->data)) {
 				$this->Session->setFlash(__('The order has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'transaction_history'));
 			} else {
 				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
 			}

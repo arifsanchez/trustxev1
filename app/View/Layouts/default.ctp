@@ -18,6 +18,8 @@ $txeDescription = __d('cake_dev', 'TXE3');
 			'home',
 			'default_theme',
 			'cake.generic',
+			'signup',
+			
 			
 		));
 		echo $this->Html->css('/usermgmt/css/umstyle');
@@ -59,7 +61,7 @@ $txeDescription = __d('cake_dev', 'TXE3');
 		<div id="logo">
 			<?php
 			echo $this->Html->link(
-			    $this->Html->image("layout/trustXE-logo.png", array("alt" => "TrustXE")),
+			     $this->Html->image("layout/trustXE-logo.png", array("alt" => "TrustXE")),
 			    array('controller' => 'pages', 'action' => 'home'),
 			    array('escape' => false)
 			);
@@ -70,37 +72,42 @@ $txeDescription = __d('cake_dev', 'TXE3');
 			<?php   
 				if ($this->UserAuth->getGroupName()=='') {
 					echo $this->Html->link('REGISTER', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'register'), array('class' => 'register_top'));
+					echo $this->Html->link('LOGIN','#login-box', array('class'=>'login-window'));
 					/*echo $this->Html->link('LOGIN', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'), array('class' => 'login_top'));*/
-			?>
-				<a href="#login-box" class="login-window"><span class="login_top">Login</span></a>
-				<div id="login-box" class="login-popup">
-					<a href="#" class="close"><img src="img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-					<?php echo $this->Form->create('User', array('action' => 'login')); ?>
-						<fieldset class="textbox">
-							<label class="username">
-								<span>Username or email</span>
-								<!--input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username"-->
-								<?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"umstyle5", 'placeholder'=>"Username" , 'autocomplete'=>"on"));?>
-							</label>
-							
-							<label class="password">
-								<span>Password</span>
-								<input id="password" name="password" value="" type="password" placeholder="Password">
-							</label>
-							<button class="submit button" type="button">Login in</button>
-							<p>
-								<a class="forgot" href="#">Forgot your password?</a>
-							</p>        
-						</fieldset>
-					<?php echo $this->Form->end(); ?>
-				</div>	
-			<?php
+			
 				} else {
 					echo $this->Html->link('User Cabinet',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'myprofile'), array('class' => 'register_top'));
 					echo $this->Html->link('LOGOUT',  array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'logout'), array('class' => 'login_top'));
 				}
 			?>
-				
+						
+			
+					<div id="login-box" class="login-popup">
+					<a href="#" class="close"><img src="../img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+					<h3>Sign in to your account</h3>
+						<form class="form">
+							<fieldset>
+						<div class="row">
+						<input type="text" class="login" name="login" placeholder="Username" action="/TXE3/login"/>
+						<!-- To mark the incorrectly filled input, you must add the class "error" to the input -->
+						<!-- example: <input type="text" class="login error" name="login" value="Username" /> -->
+						</div>
+						<div class="row">
+							<input type="password" class="password" name="password" placeholder="Password" name=""data[User][password]"/>
+							<a class="forgot" href="http://web.ikglobal.my/TXE3/forgotPassword">I forgot my password</a>
+						</div>	
+						<div class="row">
+							<input type="checkbox" class="remember" name="remember" id="remember"  name="data[User][remember]"/>
+							<label for="remember">Keep me signed in</label>
+							<input type="submit" value="Sign in" />
+							
+						</div>
+						</fieldset>
+						</form>
+						<script>
+document.getElementById("UserEmail").focus();
+</script>
+					</div>
 			
 		</div>
 

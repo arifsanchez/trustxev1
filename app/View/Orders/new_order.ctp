@@ -12,17 +12,25 @@ $(document).ready(function()
 	});
 });
 </script>
+
+<style>
+ #OrderPricedisplay{
+		 width:30%;
+		 text-align: right;
+ }
+</style>
+
 <div class="orders form">
 <?php echo $this->Form->create('Order'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Order'); ?></legend>
+		<legend><?php echo __('Order Liberty Reserve'); ?></legend>
 	<?php
 		echo $this->Form->input('order_type_id');
 		echo $this->Form->input('user_id', array('type' => 'hidden' ,'value' => $user_id));
 		echo $this->Form->input('product_id');
 		echo $this->Form->input('quantity', array());
 		echo $this->Form->input('user_ecurr_id');
-		echo $this->Form->input('pricedisplay', array('label' => 'You Need to Pay (2% Service Charge)','disabled' => 'disabled','class' => 'price_lock','type'=>'text'));
+		echo $this->Form->input('pricedisplay', array('after'=>'USD','label' => 'You Need to Pay (2% Service Charge)','disabled' => 'disabled','class' => 'price_lock','type'=>'text'));
 		echo $this->Form->input('price', array('type' => 'hidden','class' => 'price_lock'));
 		echo $this->Form->input('payment_method_id');
 		echo $this->Form->input('order_status_id');
@@ -33,4 +41,4 @@ $(document).ready(function()
 </div>
 <?php echo $this->element('user_sidebar_panel'); ?>
 
-<?php echo $this->Js->writeBuffer(); ?>
+<?php #echo $this->Js->writeBuffer(); ?>
