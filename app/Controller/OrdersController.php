@@ -76,7 +76,7 @@ class OrdersController extends AppController {
 							'user' => 'instafx', 
 							'pass' => 'instafx8000',
 							'msisdn' => '601126372316',
-							'body' =>amount $this->request->data['Order']['quantity'];acc_no $this->request->data['Order']['acc_no'];product $this->request->data['Order']['product'];payment channel $this->request->data['Order']['payment_channel'];price $this->request->data['Order']['price'],
+							'body' =>'',
 							'smstype' => 'TEXT',
 							'sender' => 'TXE',
 							#'Telco' => 'CELCOM'
@@ -91,7 +91,7 @@ class OrdersController extends AppController {
 		}
 	}
 	public function thank_buy() {	}
-	public function thank_buy() {	}
+	public function thank_sell() {	}
 		
 	public function view_sell($id = null) {
 		$this->Order->id = $id;
