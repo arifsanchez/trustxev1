@@ -62,22 +62,13 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'internal-db.s138565.gridserver.com',
-		'login' => 'db138565_arif',
-		'password' => '21325521',
-		'database' => 'db138565_TXE3',
+		'host' => 'us-cdbr-east-03.cleardb.com',
+		'login' => 'bed67a7dc2d9aa',
+		'password' => '1cdecfc7',
+		'database' => 'heroku_859189ca5f6b168',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
 
-	public $test = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'internal-db.s138565.gridserver.com',
-		'login' => 'db138565_arif',
-		'password' => '21325521',
-		'database' => 'db138565_TXE3',
-		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
+	#mysql://bed67a7dc2d9aa:1cdecfc7@us-cdbr-east-03.cleardb.com/heroku_859189ca5f6b168?reconnect=true
 }
