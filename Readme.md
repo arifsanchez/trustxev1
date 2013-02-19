@@ -9,3 +9,8 @@ New Homepage and platform for Trust Exchange
 + Twitter Bootstrap
 + Heroku Cloud Hosting
 + ClearDB MySql DB
+
+Team Members
++Arif
++Faiz
++Intan
