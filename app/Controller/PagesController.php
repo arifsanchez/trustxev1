@@ -86,14 +86,10 @@ class PagesController extends AppController {
 	}
 	
 	public function about_us(){
-		//any special code letak disini
+		
 	}
 	
 	public function contact_us(){
-		//any special code letak disini
-	}
-	
-	public function support(){
 		//any special code letak disini
 	}
 }

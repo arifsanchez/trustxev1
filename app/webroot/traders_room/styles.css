@@ -1,0 +1,176 @@
+.text{
+  font-size:    11px; 
+  color:        #565656;
+  margin-top:   7px;
+  margin-bottom:0px;
+}
+.small_text{
+  font-size: 9px; 
+}
+.formtable {
+  background-color:#EEF4F9;
+  border:          1px solid #D8DFEA;
+}
+.formtable p {
+  margin-top:   0px;
+  margin-bottom:0px;
+}
+.h1{
+  color:        #4E6791;
+  font-family:  Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-weight:  normal;
+  font-size:    20px;
+}
+a{
+  color:#416299;
+}
+td{
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+form{
+  margin-top:   0px;
+  margin-bottom:0px;
+  margin-left:  0px;
+  margin-right: 0px;
+}
+p{
+  font-size:11px;
+  color:#565656;
+  margin-top:15px;
+  margin-bottom:0px;
+}
+.room_hcell {
+   font-size:11px; 
+   color:#565656;
+   margin-top:0px;
+   margin-bottom:0px;
+   background-color: buttonface;
+   border-left: 1px solid #ffffff;
+   border-top: 1px solid #ffffff;
+}
+
+.room_qcell {
+   font-size:11px; 
+   color:#565656;
+   margin-top:0px;
+   margin-bottom:0px;
+   background-color: #F0FFF0;
+   border-left: 0px solid #ffffff;
+   border-top: 0px solid #ffffff;
+}
+
+.room_qprice_up{
+   font-size:11px; 
+   margin-top:0px;
+   color:#0000FF;
+}
+
+.room_qprice_down{
+   font-size:11px; 
+   margin-top:0px;
+   color:#FF0000;
+}
+
+.room_3dlook{
+   background-color:buttonface;
+   border-bottom: 1px solid buttonshadow;
+   border-left: 1px solid buttonshadow;
+   border-top: 1px solid #000000;
+}
+
+.room_atab{
+   font-size:11px; 
+   color:#565656;
+   margin-top:0px;
+   border-left: 1px solid #404040;
+   border-right: 1px solid #404040;
+   border-bottom: 1px solid #404040;
+}
+
+.room_atab_right{
+   font-size:11px; 
+   color:#565656;
+   margin-top:0px;
+   padding: 3 3 3 3;
+   background-color: #ffffff;
+   border-left: 0px solid buttonshadow;
+   border-right: 1px solid #000000;
+   border-top: 1px solid #000000;
+   border-bottom: 1px solid #000000;
+}
+
+.room_tab_right{
+   font-size:11px; 
+   color:#565656;
+   margin-top:0px;
+   padding: 3 10 3 10;
+   background-color: buttonface;
+   border-left: 0px solid #000000;
+   border-right: 1px solid buttonface;
+   border-top: 1px solid buttonface;
+   border-bottom: 1px solid buttonface;
+}
+
+.room_atab_pright{
+   border-top: 1px solid #000000;
+   border-bottom: 1px solid #000000;
+   background-color: buttonshadow;
+}
+
+.room_tab_pright{
+   background-color: #000000;
+}
+
+.room_atab_right{
+   padding: 3 10 3 10;
+   background-color: #ffffff;
+   border-left: 0px solid buttonshadow;
+   border-right: 1px solid #000000;
+   border-top: 1px solid #000000;
+   border-bottom: 1px solid #000000;
+}
+
+.room_tab_right{
+   padding: 3 10 3 10;
+   background-color: buttonface;
+   border-left: 0px solid #000000;
+   border-right: 1px solid buttonface;
+   border-top: 1px solid buttonface;
+   border-bottom: 1px solid buttonface;
+}
+
+.room_atab_pright{
+   border-top: 1px solid #000000;
+   border-bottom: 1px solid #000000;
+   background-color: buttonshadow;
+}
+
+.room_tab_pright{
+   background-color: #000000;
+}
+
+.room_atab_bottom{
+   padding: 3 10 3 10;
+   background-color: #ffffff;
+   border-left: 1px solid #000000;
+   border-right: 1px solid #000000;
+   border-top: 0px solid #000000;
+   border-bottom: 1px solid #000000;
+}
+
+.room_tab_bottom{
+   padding: 3 10 3 10;
+   background-color: buttonface;
+   border-left: 0px solid buttonface;
+   border-right: 0px solid buttonface;
+   border-top: 1px solid #000000;
+   border-bottom: 1px solid buttonface;
+}
+
+.room_tab_pbottom{
+   border-left: 0px solid #000000;
+   border-right: 0px solid #000000;
+   border-top: 1px solid #000000;
+   border-bottom: 0px solid #000000;
+}

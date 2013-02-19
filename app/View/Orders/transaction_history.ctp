@@ -1,4 +1,16 @@
-<div class="orders index">
+<h2><span>Transaction History</span></h2>
+
+<div class="row-fluid">
+	<div class="span4 alert">
+		<?php echo $this->element('rates'); ?>
+	</div>
+	
+	<div class="span8 well">
+	 /* Table Listing order history */
+	</div>
+</div>
+
+<!--div class="orders index">
 	<h2><?php echo __('Orders'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -65,9 +77,9 @@
 	?>
 	</div>
 	
-</div>
+</div-->
 
 <?php 
-	echo $this->element('user_sidebar_panel');
-	echo $this->Js->writeBuffer(); 
+	#echo $this->element('user_sidebar_panel');
+	#echo $this->Js->writeBuffer(); 
 ?>

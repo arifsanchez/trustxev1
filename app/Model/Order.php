@@ -48,7 +48,7 @@ class Order extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'product_id' => array(
+		'ecurr_type_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -119,9 +119,9 @@ class Order extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Product' => array(
-			'className' => 'Product',
-			'foreignKey' => 'product_id',
+		'EcurrType' => array(
+			'className' => 'EcurrType',
+			'foreignKey' => 'ecurr_type_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

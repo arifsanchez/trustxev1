@@ -183,4 +183,10 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+Configure::write(
+	'Application', array(
+		'name' => 'Trust XE',
+		'slogan' => 'Independent E-Currencies Exchanger, Selling & Buying Liberty Reserve'
+	)
+);
 

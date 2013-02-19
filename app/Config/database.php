@@ -62,10 +62,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'oipolloi88',
-		'database' => 'TXE3',
+		'host' => 'internal-db.s138565.gridserver.com',
+		'login' => 'db138565_arif',
+		'password' => '21325521',
+		'database' => 'db138565_TXE3',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
@@ -73,10 +73,10 @@ class DATABASE_CONFIG {
 	public $test = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'oipolloi88',
-		'database' => 'txe3-test',
+		'host' => 'internal-db.s138565.gridserver.com',
+		'login' => 'db138565_arif',
+		'password' => '21325521',
+		'database' => 'db138565_TXE3',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

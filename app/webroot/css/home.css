@@ -10,18 +10,18 @@ body { margin: 0px; font-size:90%;background-color: #fff; font-family:Arial, Hel
 #logo { width:300px; float:left; margin-top:20px; }
 #top_menu {width:400px; float:right; margin-top:5px;text-align:right;}
 #top_menu a {font-size:12px;text-decoration:none;color:#dfdfdf;}
-#navi { clear:both;width:978px; padding:0; margin-top:20px; }
+#navi { clear:both;width:978px; padding:1px; margin-top:20px; }
 #navi-cm { float:left; }
 
 /* Trust Exchange Small Banners - 2 BUY & SELL LR Banner + 4 Btm Small Banners */
 
 #btmwrapper { padding-top:14px; width:978px; }
 #btmwrapper .btmcolumn { margin-top:14px; float:left; width:978px; }
-#btmwrapper .buyLR{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -27px; padding-right:16px; width:481px; height:119px; }
+#btmwrapper .buyLR{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -27px; padding-right:6px; width:481px; height:119px; }
 #btmwrapper .sellLR{ float:left; background-image:url(../img/layout/txe-btm-banners.png); background-position:506px -27px; width:481px; height:119px; }
-#btmwrapper .small-banner1{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -161px; padding-right:15px; width:233px; height:157px; }
-#btmwrapper .small-banner2{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-273px -161px; padding-right:15px; width:233px; height:157px; }
-#btmwrapper .small-banner3{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-521px -161px; padding-right:15px; width:233px; height:157px; }
+#btmwrapper .small-banner1{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-25px -161px; padding-right:12px; width:233px; height:157px; }
+#btmwrapper .small-banner2{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-273px -161px; padding-right:12px; width:233px; height:157px; }
+#btmwrapper .small-banner3{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-521px -161px; padding-right:12px; width:233px; height:157px; }
 #btmwrapper .small-banner4{ float:left;	background-image:url(../img/layout/txe-btm-banners.png); background-position:-769px -161px; width:233px; height:157px; }
 
 /* Trust Exchange Data (Table) - BUY & SELL Liberty Reserve */
@@ -96,7 +96,7 @@ list-style-type: none;
 
 .block1 {
 float:left;
-padding-right:30px;
+padding-right:18px;
 border-right:1px solid #C8C8C8;
 }
 

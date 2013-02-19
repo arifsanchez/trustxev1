@@ -31,6 +31,14 @@ class UserEcurrsController extends AppController {
 		}
 		$this->set('userEcurr', $this->UserEcurr->read(null, $id));
 	}
+	
+	public function viewmyec($id = null) {
+		$this->UserEcurr->id = $id;
+		if (!$this->UserEcurr->exists()) {
+			throw new NotFoundException(__('Invalid user ecurr'));
+		}
+		$this->set('userEcurr', $this->UserEcurr->read(null, $id));
+	}
 
 /**
  * add method
@@ -48,6 +56,23 @@ class UserEcurrsController extends AppController {
 			}
 		}
 		$users = $this->UserEcurr->User->find('list');
+		$ecurrTypes = $this->UserEcurr->EcurrType->find('list');
+		$this->set(compact('users', 'ecurrTypes'));
+	}
+	
+	public function addmyec() {
+		if ($this->request->is('post')) {
+			$this->UserEcurr->create();
+			if ($this->UserEcurr->save($this->request->data)) {
+				$this->Session->setFlash(__('The new myec  has been saved'));
+				$this->redirect(array('plugin' => 'usermgmt', 'controller' => 'users','action' => 'myecurr'));
+			} else {
+				$this->Session->setFlash(__('This form could not be saved. Please, try again.'));
+			}
+		}
+		
+		$userId = $this->UserAuth->getUserId();
+		$this->set('user_id', $userId);
 		$ecurrTypes = $this->UserEcurr->EcurrType->find('list');
 		$this->set(compact('users', 'ecurrTypes'));
 	}
@@ -78,6 +103,28 @@ class UserEcurrsController extends AppController {
 		$ecurrTypes = $this->UserEcurr->EcurrType->find('list');
 		$this->set(compact('users', 'ecurrTypes'));
 	}
+	
+	public function editmyec($id = null) {
+		$this->UserEcurr->id = $id;
+		if (!$this->UserEcurr->exists()) {
+			throw new NotFoundException(__('Invalid user ecurr'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->UserEcurr->save($this->request->data)) {
+				$this->Session->setFlash(__('The user ecurr has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The user ecurr could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->request->data = $this->UserEcurr->read(null, $id);
+		}
+		$userId = $this->UserAuth->getUserId();
+		$this->set('user_id', $userId);
+		$ecurrTypes = $this->UserEcurr->EcurrType->find('list');
+		$this->set(compact('users', 'ecurrTypes'));
+	}
+
 
 /**
  * delete method
@@ -102,4 +149,11 @@ class UserEcurrsController extends AppController {
 		$this->Session->setFlash(__('User ecurr was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	public function myec($id = null) {
+		//$userId = $this->UserAuth->getUserId();
+		$this->UserEcurr->recursive = 0;
+		$this->set('userEcurrs', $this->paginate());
+	}
+
 }

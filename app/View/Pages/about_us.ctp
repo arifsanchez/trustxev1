@@ -1,37 +1,26 @@
-<div id="contact_main">
-	<div class="sidebar">
-	  <ul>        
-	  <li><a href="#"><img src="../img/contactus/buyliberty.png"></a></li> 
-          <li><a href="#"><img src="../img/contactus/sellliberty.png"></a></li> 
-	  <li><a href="#"><img src="../img/contactus/csl.png"></a></li> 
-	  </ul>	
+<h2><span>Independant E-Currencies Exchanger</span></h2>
+
+<div class="row-fluid">
+	<div class="span4">
+        <h4>Our Services</h4>
+        <?php echo $this->Html->image('contactus/buyliberty.png', array('class' => 'img-polaroid', 'alt' => 'buy lr', 'url' => array('controller' => 'orders', 'action' => 'buy')));?><br/><br/>
+        <?php echo $this->Html->image('contactus/sellliberty.png', array('class' => 'img-polaroid', 'alt' => 'buy lr', 'url' => array('controller' => 'orders', 'action' => 'sell')));?>
+    </div>
+    
+	<div class="span8">
+		<h4>About Trust XE</h4>
+		
+		<p> TrustXE commences service as online payment solution and Digital Currency exchange provider since 2005.</p>
+		
+		<p>TrustXE.com entering digital era with high end online system to provide endless customers requirements.</p>
+
+		<p>TrustXE.com is official ecurrency exchanger for forex broker, IK Trust Capital Market Corporation Limited, a leading brokerage firm, and a registered legal corporate entity with the New Zealand Company Registrar (No 3851316).</p>
+
+		<p>TrustXE is focused on the Asian market. This means our customers can fund their liberty reserve accounts and also withdraw their liberty reserve ecurrency back to TrustXE.</p>
+
+		<p>With over 10 thousands satisfied repeat customers in 6 years, we decided to extend our exchange services to Liberty Reserve online. Because we know that e-currencies are crucial to the survival and success of your business and that your business success makes you happy, we have just one objective which is to make you happy by helping your business succeed. </p>
+
+		<p>We invite you to take advantage of what we offer today and when we have made you happy, don't forget to tell your friends about us as this will attract a commission.</p>
+		
 	</div>
-	<div id="wrap_main">
-		<h1>Why Trust Exchange</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec nulla sit amet nisi luctus congue. Morbi convallis, lacus sodales dignissim facilisis, eros metus sagittis lectus, sed consequat ipsum urna ultricies lectus. Integer adipiscing ullamcorper lorem, id auctor nisl ultricies eu. Integer posuere tellus a tellus fermentum ut aliquet nunc volutpat.<p><P>Donec blandit tempus lacus id ultrices. Nulla cursus nisl a lacus pulvinar sit amet dictum ipsum vulputate. Cras egestas gravida tellus a fermentum. Vestibulum vitae diam lectus, quis rutrum elit. Quisque ornare egestas est, vestibulum rutrum arcu volutpat ut. </p>
-<br/ > <br/ >
-<h2>Why Exchange Liberty Reserve(LR) with Trust Exchange (TXE)</h2><br/ >
-<h3>10 Reasons :</h3>
-<div class="reason_list">
-<ul class="pointer">
-<li>We are the first exchanger in Malaysia and established in 2011.</li>
-<li>Ranked highly and located at the first page of Google Search Engine.</li>
-<li>Trust XE is a registerd company in Malaysia.</li>
-<li><a href="www.trustxe.com">www.trustxe.com</a> is registered under Yahoo! web Hosting.</li>
-<li>Contact no. is registered under Maxis.</li>
-<li>Every steps of exchange are secured, monitored and supervised.</li>
-<li>We send enail and sms confirmation to ensure that you are safe from being hacked.</li>
-<li>We like to deal with customers throught SMS or direct call to provide fast and efficient services.</li>
-
-
-<li>Prompt response for inquiies and exchange services.</li>
-<li>Reasonable good rates and order done within one hour.</li>
-</ul>
-</div>	
-		
-
-		
-
-		
-	</div>	
-</div> 
+</div>

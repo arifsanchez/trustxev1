@@ -15,6 +15,13 @@ class ProductsController extends AppController {
 	public function index() {
 		$this->Product->recursive = 0;
 		$this->set('products', $this->paginate());
+		
+		$product = $this->paginate();
+        if ($this->request->is('requested')) {
+            return $product;
+        } else {
+            $this->set('product', $product);
+        }
 	}
 
 /**
