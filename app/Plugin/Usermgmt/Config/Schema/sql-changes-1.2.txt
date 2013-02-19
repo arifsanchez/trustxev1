@@ -1,0 +1,2 @@
+INSERT INTO `user_settings` (`id` ,`name` ,`name_public` ,`value` ,`type`) VALUES (NULL , 'QRDN', 'Increase this number by 1 every time if you made any changes in CSS or JS file ', '12345678', 'input');
+INSERT INTO `user_settings` (`id`, `name`, `name_public`, `value`, `type`) VALUES (NULL, 'cookieName', 'Please enter cookie name for your site which is used to login user automatically for remember me functionality', 'UMPremiumCookie', 'input');

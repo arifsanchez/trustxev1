@@ -1,0 +1,9 @@
+ALTER TABLE `user_activities` ADD `status` INT( 1 ) NOT NULL DEFAULT '0' AFTER `deleted`;
+ALTER TABLE `users` CHANGE `user_group_id` `user_group_id` VARCHAR( 256 ) NULL DEFAULT NULL;
+INSERT INTO `user_group_permissions` (`id`, `user_group_id`, `controller`, `action`, `allowed`) VALUES
+(null, 1, 'Autocomplete', 'fetch', 1),
+(null, 2, 'Autocomplete', 'fetch', 1),
+(null, 3, 'Autocomplete', 'fetch', 1),
+(null, 1, 'Users', 'viewUserPermissions', 1),
+(null, 2, 'Users', 'viewUserPermissions', 0),
+(null, 3, 'Users', 'viewUserPermissions', 0);

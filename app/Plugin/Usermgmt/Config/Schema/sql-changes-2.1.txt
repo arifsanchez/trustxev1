@@ -1,0 +1,62 @@
+ALTER TABLE `users` ADD `ip_address` VARCHAR( 50 ) NULL AFTER `by_admin`;
+INSERT INTO `user_settings` (`id`, `name`, `name_public`, `value`, `type`) VALUES (NULL, 'adminEmailAddress', 'Admin Email address for emails', '', 'input');
+INSERT INTO `user_group_permissions` (`id`, `user_group_id`, `controller`, `action`, `allowed`) VALUES
+(null, 1, 'Contents', 'index', 1),
+(null, 2, 'Contents', 'index', 0),
+(null, 3, 'Contents', 'index', 0),
+(null, 1, 'Contents', 'addPage', 1),
+(null, 2, 'Contents', 'addPage', 0),
+(null, 3, 'Contents', 'addPage', 0),
+(null, 1, 'Contents', 'editPage', 1),
+(null, 2, 'Contents', 'editPage', 0),
+(null, 3, 'Contents', 'editPage', 0),
+(null, 1, 'Contents', 'viewPage', 1),
+(null, 2, 'Contents', 'viewPage', 0),
+(null, 3, 'Contents', 'viewPage', 0),
+(null, 1, 'Contents', 'deletePage', 1),
+(null, 2, 'Contents', 'deletePage', 0),
+(null, 3, 'Contents', 'deletePage', 0),
+(null, 1, 'Contents', 'content', 1),
+(null, 2, 'Contents', 'content', 1),
+(null, 3, 'Contents', 'content', 1),
+(null, 1, 'UserContacts', 'index', 1),
+(null, 2, 'UserContacts', 'index', 0),
+(null, 3, 'UserContacts', 'index', 0),
+(null, 1, 'UserContacts', 'contactUs', 1),
+(null, 2, 'UserContacts', 'contactUs', 1),
+(null, 3, 'UserContacts', 'contactUs', 1),
+(null, 1, 'Users', 'ajaxLoginRedirect', 1),
+(null, 2, 'Users', 'ajaxLoginRedirect', 1),
+(null, 3, 'Users', 'ajaxLoginRedirect', 1),
+(null, 1, 'Users', 'viewProfile', 1),
+(null, 2, 'Users', 'viewProfile', 1),
+(null, 3, 'Users', 'viewProfile', 1),
+(null, 1, 'Users', 'sendMails', 1),
+(null, 2, 'Users', 'sendMails', 0),
+(null, 3, 'Users', 'sendMails', 0),
+(null, 1, 'Users', 'searchEmails', 1),
+(null, 2, 'Users', 'searchEmails', 0),
+(null, 3, 'Users', 'searchEmails', 0);
+
+CREATE TABLE IF NOT EXISTS `contents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_name` text,
+  `url_name` text,
+  `page_content` text,
+  `page_title` text,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `user_contacts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `requirement` text,
+  `reply_message` text,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

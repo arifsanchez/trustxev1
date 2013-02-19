@@ -1,0 +1,99 @@
+UserMgmt is a User Management Plugin for cakephp 2.x
+Plugin Premium version 2.1 (stable)
+
+Hey wanna Demo ??? http://umpremium.ektasoftwares.com
+
+For All	featues	go to http://umpremium.ektasoftwares.com/
+
+For Documentations go to http://developers.ektasoftwares.com/docs/umpremium/index.html
+
+INSTALLATION
+------------
+
+1. Download the	latest version from http://www.ektasoftwares.com/products
+	go to yourapp/app/Plugin
+	extract	here
+	name it	Usermgmt
+
+2. Schema import (use your favorite sql	tool to	import the schema)
+
+	yourapp/app/Plugin/Usermgmt/Config/Schema/usermgmt-2.1.sql
+
+3. Configure your AppController	class
+
+	Your yourapp/app/Controller/AppController.php should look like this:
+
+<?php
+	class AppController extends Controller {
+		var $helpers = array('Form', 'Html', 'Session',	'Js', 'Usermgmt.UserAuth', 'Usermgmt.Image');
+		public $components = array('Session','RequestHandler', 'Usermgmt.UserAuth');
+		function beforeFilter(){
+			$this->userAuth();
+		}
+		private	function userAuth(){
+			$this->UserAuth->beforeFilter($this);
+		}
+		function beforeRender(){
+			if(!defined("SITE_URL")) {
+				UsermgmtInIt($this);
+			}
+		}
+	}
+?>
+4. (Optional)
+	This plugin is CSRF protection enabled and If you want to use CSRF in rest Application just use	Security component
+	for ex.	$components in Your yourapp/app/Controller/AppController.php should look like this:
+	public $components = array('Session','RequestHandler', 'Usermgmt.UserAuth', 'Security');
+
+5. Enable Plugin in your bootstrap.php
+
+	yourapp/app/Config/bootstrap.php should	include	this line
+
+	// load	Usermgmt plugin	and apply plugin routes. Keep all the other plugins you	are using here
+	CakePlugin::loadAll(array(
+	    'Usermgmt' => array('routes' => true, 'bootstrap' => true),
+	));
+
+6. Add plugin css and js files in head of your layout file, for	example	yourapp/app/View/Layouts/default.ctp
+
+    Add	these 3	lines inside head tag (just after opening of head tag)
+
+    <script language="javascript">
+	var urlForJs="<?php echo SITE_URL ?>";
+    </script>
+
+    Add	these css and js files
+
+    echo $this->Html->css('/usermgmt/css/umstyle.css?q='.QRDN);
+    echo $this->Html->script('/usermgmt/js/jquery-1.7.2.min.js');
+    echo $this->Html->script('/usermgmt/js/umscript.js?q='.QRDN);
+
+    If you are using cake.generic then cake.generic must put before umstyle.css
+
+    Now	add following line in content div just above the <?php echo $this->fetch('content'); ?>
+
+    <div class="messageHolder"><?php echo $this->Session->flash(); ?></div>
+
+    For	ex your	code look like-
+
+    <div id="content">
+	<div class="messageHolder"><?php echo $this->Session->flash(); ?></div>
+	<?php echo $this->fetch('content'); ?>
+    </div>
+
+7. Download the	tinymce	editor from http://www.tinymce.com/download/download.php (at this time latest version is TinyMCE 3.5.6)
+	Extract	it some	where now go tinymce/jscripts directory	and copy tiny_mce folder and go	to yourapp/app/webroot/js directory and	paste here.
+
+8. Go to yourdomain/login
+Default	user name password
+username- admin
+password- 123456
+
+ALL DONE !
+
+HOW TO UPGRADE from Old	Version	to New Version
+
+see the	guide http://developers.ektasoftwares.com/docs/umpremium/upgrade.html
+
+
+If you have any	problem	please do not hesitate to contact me at	chetanvarshney@gmail.com
