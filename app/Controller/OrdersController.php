@@ -2,33 +2,33 @@
 App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 App::uses('HttpSocket', 'Network/Http');
-App::import('Core', 'HttpSocket');
+
 
 class OrdersController extends AppController {
 
 	function sms(){
   
-		  if(!empty($this->data)){
-		   #debug($this->data);die();
-		   App::import('Core', 'HttpSocket');
+		  if(!empty($this->request->data)){
+		   debug($this->data);
+		  
 		   $HttpSocket = new HttpSocket();
 		   $results = $HttpSocket->post('http://bulk.ezlynx.net:7001/BULK/BULKMT.aspx', array(
 			'user' => 'instafx', 
 			'pass' => 'instafx8000',
-			'msisdn' => $this->data['Cabinets']['number'],
-			'body' => ' - '.$this->data['Cabinets']['message'],
+			'msisdn' => $this->request->data['Order']['sms_number'],
+			'body' => $this->request->data['Order']['message'],
 			'smstype' => 'TEXT',
-			'sender' => 'IKTRUST',
+			'sender' => 'TXE',
 			#'Telco' => 'CELCOM'
 		   ));  
 		   //$results contains what is returned from the post.
-		   #debug($results);die();
+		   debug($results);
 		   if(preg_match("/\bSUCCESS\b/i", $results)) {
-			$this->Session->setFlash('Successfully queue sent message to '.$this->data['Cabinets']['number'], 'flash/flash_good');
-			$this->redirect(array('action' => 'terminal_sms_blasting'));
+			$this->Session->setFlash('Successfully queue sent message to '.$this->data['Order']['sms_number'], 'flash/flash_good');
+			//$this->redirect(array('action' => 'terminal_sms_blasting'));
 		   } else {
 			$this->Session->setFlash('Error Sending SMS, Please try again', 'flash/flash_good');
-			$this->redirect(array('action' => 'terminal_sms_blasting'));
+			//$this->redirect(array('action' => 'terminal_sms_blasting'));
 		   }
 		  }
    }
