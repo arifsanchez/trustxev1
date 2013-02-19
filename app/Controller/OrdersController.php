@@ -92,7 +92,13 @@ class OrdersController extends AppController {
 					
 					#debug($this->request->data); die();
 					if (isset($this->request->data['submit1'])) {
-					$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LRUSD&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
+					
+						if($this->request->data['Order']['ecurr_type_id'] = 1){
+							$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LRUSD&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
+						}else{
+						
+						}
+						
 					
 					
 				} else if (isset($this->request->data['submit2'])) {
