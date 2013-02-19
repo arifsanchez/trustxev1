@@ -44,8 +44,15 @@
 						</dl>
 						</div>
 				</fieldset>
-				<?php echo $this->Form->create(false); ?>
+				<?php  echo $this->Form->create('Order', array('class' => 'form' )); 
+				
+					echo $this->Form->input('quantity', array('type' => 'hidden', 'value' => $order['Order']['quantity']));
+					echo $this->Form->input('acc_no', array('type' => 'hidden', 'value' => $order['UserEcurr']['acc_no']));
+					echo $this->Form->input('product', array('type' => 'hidden', 'value' => $order['EcurrType']['name']));
+					echo $this->Form->input('payment_channel', array('type' => 'hidden', 'value' => $order['PaymentMethod']['name']));
+					echo $this->Form->input('price', array('type' => 'hidden', 'value' => $order['Order']['price']));
 					
+				?>	
 					<div class="span4 offset2"> <?php echo $this->Form->submit('Back', array('name' => 'submit2','class'=>'btn btn-primary ')); ?></div>
 					<?php echo $this->Form->submit('Next', array('name' => 'submit1','class'=>'btn btn-primary ',)); ?> 
 					

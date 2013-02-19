@@ -58,18 +58,30 @@ class OrdersController extends AppController {
 			'conditions' => array('id' => $userId),
 			'fields' => array('email')
 		)); 
+		
 	   if ($this->request->is('post') || $this->request->is('put'))  {
 	   
 					if (isset($this->request->data['submit1'])) {
-					
-					$email = new CakeEmail();
-					$email->from(array('admin@trustxe.com' =>'trustxe'))
-					->template('invoice')
-					->emailFormat('both')
-					->to($user)
-					->subject('Test')
-					->send('Test');
-					
+						//send email payment detail to user
+						$email = new CakeEmail();
+						$email->from(array('admin@trustxe.com' =>'trustxe'))
+						->template('invoice')
+						->emailFormat('both')
+						->to($user)
+						->subject('Test')
+						->send('Test');
+						// send  sms notification to ceo
+						$HttpSocket = new HttpSocket();
+						$HttpSocket->post('http://bulk.ezlynx.net:7001/BULK/BULKMT.aspx', array(
+							'user' => 'instafx', 
+							'pass' => 'instafx8000',
+							'msisdn' => '601126372316',
+							'body' =>amount $this->request->data['Order']['quantity'];acc_no $this->request->data['Order']['acc_no'];product $this->request->data['Order']['product'];payment channel $this->request->data['Order']['payment_channel'];price $this->request->data['Order']['price'],
+							'smstype' => 'TEXT',
+							'sender' => 'TXE',
+							#'Telco' => 'CELCOM'
+						   )); 
+					   
 					$this->redirect(array('action' =>'thank_buy'));
 					
 				} else if (isset($this->request->data['submit2'])) {
@@ -78,17 +90,14 @@ class OrdersController extends AppController {
 			
 		}
 	}
-	public function thank_buy() {
-	
-		
-	}
-		
+	public function thank_buy() {	}
+	public function thank_buy() {	}
 		
 	public function view_sell($id = null) {
 		$this->Order->id = $id;
 		$this->set('order', $this->Order->read(null, $id));
 		
-		if ($this->request->is('post') || $this->request->is('put'))  {
+		if ($this->request->is('post') || $this->request->is('put')){
 					
 					#debug($this->request->data); die();
 					if (isset($this->request->data['submit1'])) {
@@ -96,15 +105,12 @@ class OrdersController extends AppController {
 						if($this->request->data['Order']['ecurr_type_id'] = 1){
 							$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LRUSD&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
 						}else{
-						
+							$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LREUR&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
 						}
-						
-					
-					
+				
 				} else if (isset($this->request->data['submit2'])) {
 					$this->redirect(array('action' =>'edit_sell',$this->Order->id));
 				}
-			
 		}
 	}
 
@@ -222,18 +228,13 @@ class OrdersController extends AppController {
 			$this->request->data['Order']['order_type_id'] = 1;
 			$this->request->data['Order']['order_status_id'] = 1;
 			$this->Order->create();
-			  
 			if ($this->Order->save($this->request->data)) {
-			
-				}
 				$this->Session->setFlash(__('The order has been saved'));
 				$this->redirect(array('action' => 'view_buy',$this->Order->id));
-				
 			} else {
 				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
 			}
-		
-		
+		}
 		$userId = $this->UserAuth->getUserId();
 		$this->set('user_id', $userId);
 		$ecurrTypes = $this->Order->EcurrType->find('list');
@@ -242,7 +243,6 @@ class OrdersController extends AppController {
 			'conditions' => array('UserEcurr.user_id' => $userId),
 			'fields' => array('UserEcurr.acc_no')
 		));
-	
 		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods'));
 	}
 	
