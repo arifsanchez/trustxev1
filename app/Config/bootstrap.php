@@ -143,7 +143,6 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 CakePlugin::loadAll(array(
-	'DebugKit',
 	'Usermgmt' => array('routes' => true, 'bootstrap' => true),
 ));
 
