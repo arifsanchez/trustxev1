@@ -112,10 +112,10 @@ $(document).ready(function()
 					<?php 
 						echo $this->Form->input('duit', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));
 						echo '&nbsp';
-						echo $this->Form->input('price', array('label' => "",'div' => false,'disabled' => 'disabled',));
+						echo $this->Form->input('priced', array('label' => "",'div' => false,'disabled' => 'disabled',));
 					?>
 				</div>
-					<?php echo $this->Form->input('price', array('type' => '',));?>
+					<?php echo $this->Form->input('price', array('type' => 'hidden',));?>
 				</fieldset>
 			</div>
 		</div>

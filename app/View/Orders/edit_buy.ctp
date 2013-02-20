@@ -9,7 +9,7 @@ $(document).ready(function()
 		var total         = 0;
 		var percent    = 0;
 		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPrice').val();
+		var price       = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -19,21 +19,29 @@ $(document).ready(function()
 				 	
 		if ( payment == 3) {
 			total = parseFloat(price) * parseFloat(percent);
+			plus =  parseFloat(price) + 50;
+			$('#OrderPrice').val(plus);
+			$('#OrderPrices').val(plus);
+			$('#OrderDuitd').val('$');
 			$('#OrderDuit').val('$');
 		} else {
 			total = (parseFloat(price) * parseFloat(percent))* 0.319;
 			$('#OrderDuit').val('MYR');
+			$('#OrderPrices').val('');
+			$('#OrderDuitd').val('');
+			$('#OrderPrice').val(price);
 		}
 		$('#OrderQuantityd').val(total);
 		$('#OrderQuantity').val(total); 
 		
 	});
 		
-	$("#OrderPrice").change(function(){
+	$("#OrderPriced").change(function(){
 	   	var total         = 0;
 		var percent    = 0;
+		var plus         =0;
 		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPrice').val();
+		var price       = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -43,9 +51,13 @@ $(document).ready(function()
 				 	
 		if ( payment == 3) {
 			total = parseFloat(price) * parseFloat(percent);
+			plus =  parseFloat(price) + 50;
+			$('#OrderPrice').val(plus);
+			$('#OrderPrices').val(plus);
 			$('#OrderDuit').val('$');
 		} else {
 			total = (parseFloat(price) * parseFloat(percent))* 0.319;
+			$('#OrderPrice').val(price);
 			$('#OrderDuit').val('MYR');
 		}
 		$('#OrderQuantityd').val(total);
@@ -53,11 +65,12 @@ $(document).ready(function()
 		
 	});
 	 
+	 
 	$("#OrderEcurrTypeId").change(function(){
 		var total         = 0;
 		var percent    = 0;
 		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPrice').val();
+		var price       = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -95,14 +108,25 @@ $(document).ready(function()
 					    
 					<label>Payment  Channel</label>
 					<?php echo $this->Form->input('payment_method_id',array('label' => "",'empty'=>'Select' ,'div' => false,));?>
+					
 					<label>Amount To  Transfer</label>
 					<div class="form-inline">
 					<?php 
 						echo $this->Form->input('duit', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));
 						echo '&nbsp';
-						echo $this->Form->input('price', array('label' => "",'div' => false,));
+						echo $this->Form->input('priced', array('label' => "",'div' => false,));
 					?>
 				</div>
+				
+					<label>Amount To  Be Paid (for technocash only service charge $50)</label>
+					<div class="form-inline">
+					<?php 
+						echo $this->Form->input('duitd', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));
+						echo '&nbsp';
+						echo $this->Form->input('prices', array('label' => "",'div' => false,'disabled' => 'disabled'));
+						echo $this->Form->input('price', array('label' => "",'div' => false,'type'=>'hidden'));
+						echo '&nbsp';
+					?>
 					
 			</fieldset>
 			</div>

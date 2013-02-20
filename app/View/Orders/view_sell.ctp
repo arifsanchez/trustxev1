@@ -51,7 +51,8 @@
 				
 				<?php 
 					echo $this->Form->create('Order', array('class' => 'form' )); 
-					echo $this->Form->input('lrmount', array('type' => 'hidden', 'value' => $order['Order']['quantity']));?>
+					echo $this->Form->input('lrmount', array('type' => 'hidden', 'value' => $order['Order']['quantity']));
+					echo $this->Form->input('type', array('type' => 'hidden', 'value' => $order['EcurrType']['id']));?>
 					<div class="span4 offset2"><?php echo $this->Form->submit('Back', array('name' => 'submit2','class'=>'btn btn-primary '));	?> </div>
 					<?php echo $this->Form->submit('Next', array('name' => 'submit1','class'=>'btn btn-primary ',));
 					echo $this->Form->end();

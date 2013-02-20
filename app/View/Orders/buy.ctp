@@ -8,7 +8,6 @@ $(document).ready(function()
 	   
 		var total         = 0;
 		var percent    = 0;
-		var plus         =0;
 		var payment  = $('#OrderPaymentMethodId').val();
 		var price       = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
@@ -20,11 +19,17 @@ $(document).ready(function()
 				 	
 		if ( payment == 3) {
 			total = parseFloat(price) * parseFloat(percent);
+			plus =  parseFloat(price) + 50;
+			$('#OrderPrice').val(plus);
+			$('#OrderPrices').val(plus);
 			$('#OrderDuitd').val('$');
 			$('#OrderDuit').val('$');
 		} else {
 			total = (parseFloat(price) * parseFloat(percent))* 0.319;
 			$('#OrderDuit').val('MYR');
+			$('#OrderPrices').val('');
+			$('#OrderDuitd').val('');
+			$('#OrderPrice').val(price);
 		}
 		$('#OrderQuantityd').val(total);
 		$('#OrderQuantity').val(total); 
@@ -52,6 +57,7 @@ $(document).ready(function()
 			$('#OrderDuit').val('$');
 		} else {
 			total = (parseFloat(price) * parseFloat(percent))* 0.319;
+			$('#OrderPrice').val(price);
 			$('#OrderDuit').val('MYR');
 		}
 		$('#OrderQuantityd').val(total);
@@ -62,7 +68,6 @@ $(document).ready(function()
 	$("#OrderEcurrTypeId").change(function(){
 		var total         = 0;
 		var percent    = 0;
-		var plus         =0;
 		var payment  = $('#OrderPaymentMethodId').val();
 		var price       = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
@@ -108,6 +113,7 @@ $(document).ready(function()
 						echo $this->Form->input('duit', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));
 						echo '&nbsp';
 						echo $this->Form->input('priced', array('label' => "",'div' => false,));
+						
 					?>
 					</div>
 					<label>Amount To  Be Paid (for technocash only service charge $50)</label>

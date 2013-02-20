@@ -94,15 +94,17 @@ class OrdersController extends AppController {
 	public function thank_sell() {	}
 		
 	public function view_sell($id = null) {
+		
 		$this->Order->id = $id;
 		$this->set('order', $this->Order->read(null, $id));
 		
 		if ($this->request->is('post') || $this->request->is('put')){
 					
-					#debug($this->request->data); die();
+					//debug($this->request->data);
 					if (isset($this->request->data['submit1'])) {
 					
-						if($this->request->data['Order']['ecurr_type_id'] = 1){
+						if($this->request->data['Order']['type']==1){
+						
 							$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LRUSD&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
 						}else{
 							$this->redirect('https://sci.libertyreserve.com/en?lr_acc=U4792147&lr_store=TRUST+XE+-+SecurePayment&lr_currency=LREUR&lr_amnt='. $this->request->data['Order']['lrmount'].'&lr_success_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_success&lr_success_url_method=GET&lr_fail_url=http%3a%2f%2ftrustxe.com%2forders%2fpayment_fail&lr_fail_url_method=GET');
