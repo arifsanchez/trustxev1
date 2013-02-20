@@ -90,7 +90,16 @@ class OrdersController extends AppController {
 			
 		}
 	}
-	public function thank_buy() {	}
+	public function thank_buy() {	
+		$userId = $this->UserAuth->getUserId();
+		$this->loadModel('Usermgmt.User');
+		$user = $this->User->find('all', array(
+			'conditions' => array('User.id' => $userId),
+			'recursive' => -1,
+			'fields' => array('User.username', 'User.email'),
+		)); 
+		$this->set('user', $user);
+	}
 	public function thank_sell() {	}
 		
 	public function view_sell($id = null) {
