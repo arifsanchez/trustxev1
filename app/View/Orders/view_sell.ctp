@@ -35,6 +35,11 @@
 									<?php echo $this->Html->link($order['PaymentMethod']['name'], array('controller' => 'payment_methods', 'action' => 'view', $order['PaymentMethod']['id'])); ?>
 									&nbsp;
 								</dd><p>
+							<dt>Account Name</dt>
+								<dd>
+									<?php echo h($order['Order']['acc_name']); ?>
+									&nbsp;
+								</dd><p>	
 							<dt>Account Number</dt>
 								<dd>
 									<?php echo h($order['Order']['acc_no']); ?>

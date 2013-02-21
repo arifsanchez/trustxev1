@@ -9,8 +9,8 @@ $(document).ready(function()
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 					
-		if (rate==1){ percent  = 0.9 }
-		if (rate==2) { percent =0.89}
+		if (rate==1){ percent  = 0.98 }
+		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 		
@@ -19,7 +19,7 @@ $(document).ready(function()
 			$('#OrderDuit').val('$');
 			
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 3.3;
+			total = parseFloat(price) * 3.3;
 			$('#OrderDuit').val('MYR');
 		}
 		
@@ -34,8 +34,8 @@ $(document).ready(function()
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
-		if (rate==1){ percent  = 0.9 }
-		if (rate==2) { percent =0.89}
+		if (rate==1){ percent  = 0.98 }
+		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 		
@@ -44,11 +44,11 @@ $(document).ready(function()
 			$('#OrderDuit').val('$');
 			
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 3.3;
+			total = parseFloat(price)* 3.3;
 			$('#OrderDuit').val('MYR');
 		}
 		
-		$('#OrderPriced').val('123');
+		$('#OrderPriced').val(total);
 		$('#OrderPrice').val(total);
 		
 	});
@@ -59,8 +59,8 @@ $(document).ready(function()
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
-		if (rate==1){ percent  = 0.9 }
-		if (rate==2) { percent =0.89}
+		if (rate==1){ percent  = 0.98}
+		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 		
@@ -69,7 +69,7 @@ $(document).ready(function()
 			$('#OrderDuit').val('$');
 			
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 3.3;
+			total = parseFloat(price) * 3.3;
 			$('#OrderDuit').val('MYR');
 		}
 		
@@ -105,6 +105,8 @@ $(document).ready(function()
 					<legend>I Will Get</legend>	
 					<label>Payment  Channel</label>
 					<?php echo $this->Form->input('payment_method_id',array('label' => "",'empty'=>'Select' ,'div' => false, ));?>
+					<label>Account Name</label>
+					<?php echo $this->Form->input('acc_name',array('label' => "",'div' => false, ));?>
 					<label>Account Number</label>
 					<?php echo $this->Form->input('acc_no',array('label' => "",'div' => false, ));?>
 					<label>Amount i Receive</label>	
