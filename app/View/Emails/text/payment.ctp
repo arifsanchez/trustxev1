@@ -1,10 +1,7 @@
 <h1> BUY ORDER : # <?php echo $id ?> </h1>
 
 <p>Dear <?php echo $user['User']['firstname'] ?>,</p>
-$email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$payment_to,
-										'payment_from'=>$payment_from,'price'=>$price,
-										));
-										
+
 <p>Thank you for your order. Below you will find all the information regarding your order </p>
 <p>Account : <?php echo $account?></p>
 <p>Amount+Fees : <?php echo $price?></p>
@@ -12,7 +9,6 @@ $email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$p
 <p>Currency : <?php echo $product ?></p>
 
 <p>------------------------------------------------------</p>
-
 <h3>Here is our information for processing your order.</h3>
 
 <p>Local Exchanger</P>
@@ -38,9 +34,6 @@ $email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$p
 			<br>Account Number : 1447-0000475-10-7
 		 </div>
 	</div>
-	
-	
-
 <p>International Exchanger</P>			
 <table class="table table-bordered" >
 	<tr>
@@ -77,19 +70,10 @@ $email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$p
 	<tr >
 		<td>Reference</td>
 		<td>AT46HP + member reference for IK Worldwide Solutions</td>
-	</tr>
-								
+	</tr>					
 </table>
-
-
 <p>------------------------------------------------------</p>
-
-
-
 <p>If you have any order related questions, please contact us at support@trustxe.com and provide the Order ID :<?php echo $id ?> 
-
-
-Thank you for your business.
-
-<a href="www.trustxe.com"> www.trustxe.com</a>
+<p>Thank you for your business.</p>
+<p><a href="www.trustxe.com"> www.trustxe.com</a></p>
 	
