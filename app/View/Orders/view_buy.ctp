@@ -54,7 +54,8 @@
 					echo $this->Form->input('quantity', array('type' => 'hidden', 'value' => $order['Order']['quantity']));
 					echo $this->Form->input('acc_no', array('type' => 'hidden', 'value' => $order['UserEcurr']['acc_no']));
 					echo $this->Form->input('product', array('type' => 'hidden', 'value' => $order['EcurrType']['name']));
-					echo $this->Form->input('payment_channel', array('type' => 'hidden', 'value' => $order['PaymentMethod']['name']));
+					echo $this->Form->input('payment_to', array('type' => 'hidden', 'value' => $order['PaymentMethod']['name']));
+					echo $this->Form->input('payment_from', array('type' => 'hidden', 'value' => $order['Bank']['name']));
 					echo $this->Form->input('price', array('type' => 'hidden', 'value' => $order['Order']['price']));
 					
 				?>	

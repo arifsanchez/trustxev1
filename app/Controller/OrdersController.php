@@ -58,18 +58,26 @@ class OrdersController extends AppController {
 			'conditions' => array('id' => $userId),
 			'fields' => array('email')
 		)); 
-		
+				
 	   if ($this->request->is('post') || $this->request->is('put'))  {
-	   
+				$this->request->data['Order']['acc_no'] 			= $account;
+				$this->request->data['Order']['product'] 			= $product;
+				$this->request->data['Order']['payment_to'] 		= $payment_to;
+				$this->request->data['Order']['payment_from'] 	= $payment_from;
+				$this->request->data['Order']['price'] 				= $price;
+			
 					if (isset($this->request->data['submit1'])) {
 						//send email payment detail to user
 						$email = new CakeEmail();
+						$email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$payment_to,
+										'payment_from'=>$payment_from,'price'=>$price,'id'=>$id,
+										));
 						$email->from(array('admin@trustxe.com' =>'trustxe'))
-						->template('invoice')
+						->template('payment','payment')
 						->emailFormat('both')
 						->to($user)
-						->subject('Test')
-						->send('Test');
+						->subject('Details Of Payment')
+						->send();
 						// send  sms notification to ceo
 						$HttpSocket = new HttpSocket();
 						$HttpSocket->post('http://bulk.ezlynx.net:7001/BULK/BULKMT.aspx', array(
