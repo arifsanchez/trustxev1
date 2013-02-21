@@ -78,6 +78,16 @@ class Order extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'bank_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'order_status_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -129,6 +139,13 @@ class Order extends AppModel {
 		'PaymentMethod' => array(
 			'className' => 'PaymentMethod',
 			'foreignKey' => 'payment_method_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Bank' => array(
+			'className' => 'Bank',
+			'foreignKey' => 'bank_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -3,13 +3,14 @@
 <script>
 $(document).ready(function()
 {	
-
-	$("#OrderPaymentMethodId").change(function(){
+	
+	$("#OrderBankId").change(function(){
 	   
 		var total         = 0;
 		var percent    = 0;
-		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPriced').val();
+		var to			= $('#OrderPaymentMethodId').val();
+		var from		= $('#OrderBankId').val();
+		var priced      = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -17,19 +18,65 @@ $(document).ready(function()
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 				 	
-		if ( payment == 3) {
-			total = parseFloat(price) * parseFloat(percent);
-			plus =  parseFloat(price) + 50;
-			$('#OrderPrice').val(plus);
-			$('#OrderPrices').val(plus);
+		if ( to== 3) {
 			$('#OrderDuitd').val('$');
 			$('#OrderDuit').val('$');
+			if( from==3){
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 5;
+				$('#OrderPrices').val(plus);
+				$('#OrderPrice').val(plus);
+			}else{
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 55;
+				$('#OrderPrice').val(plus);
+				$('#OrderPrices').val(plus);
+			}
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 0.319;
+			total = parseFloat(priced) *0.319;
 			$('#OrderDuit').val('MYR');
-			$('#OrderPrices').val('');
-			$('#OrderDuitd').val('');
-			$('#OrderPrice').val(price);
+			$('#OrderPrices').val(priced);
+			$('#OrderDuitd').val('MYR');
+			$('#OrderPrice').val(priced);
+		}
+		$('#OrderQuantityd').val(total);
+		$('#OrderQuantity').val(total); 
+		
+	});
+	$("#OrderPaymentMethodId").change(function(){
+	   
+		var total         = 0;
+		var percent    = 0;
+		var to			= $('#OrderPaymentMethodId').val();
+		var from		= $('#OrderBankId').val();
+		var priced      = $('#OrderPriced').val();
+		var rate         = $('#OrderEcurrTypeId').val();
+		
+		if (rate==1){ percent  = 0.98 }
+		if (rate==2) { percent =0.89}
+		if (rate==3) {percent =3.4}
+		if(rate==4) {percent =10650}
+				 	
+		if ( to== 3) {
+			$('#OrderDuitd').val('$');
+			$('#OrderDuit').val('$');
+			if( from==3){
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 5;
+				$('#OrderPrices').val(plus);
+				$('#OrderPrice').val(plus);
+			}else{
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 55;
+				$('#OrderPrice').val(plus);
+				$('#OrderPrices').val(plus);
+			}
+		} else {
+			total = parseFloat(priced) * 0.319;
+			$('#OrderDuit').val('MYR');
+			$('#OrderPrices').val(priced);
+			$('#OrderDuitd').val('MYR');
+			$('#OrderPrice').val(priced);
 		}
 		$('#OrderQuantityd').val(total);
 		$('#OrderQuantity').val(total); 
@@ -37,11 +84,11 @@ $(document).ready(function()
 	});
 		
 	$("#OrderPriced").change(function(){
-	   	var total         = 0;
+	   var total         = 0;
 		var percent    = 0;
-		var plus         =0;
-		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPriced').val();
+		var to			= $('#OrderPaymentMethodId').val();
+		var from		= $('#OrderBankId').val();
+		var priced      = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -49,27 +96,37 @@ $(document).ready(function()
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 				 	
-		if ( payment == 3) {
-			total = parseFloat(price) * parseFloat(percent);
-			plus =  parseFloat(price) + 50;
-			$('#OrderPrice').val(plus);
-			$('#OrderPrices').val(plus);
+		if ( to== 3) {
+			$('#OrderDuitd').val('$');
 			$('#OrderDuit').val('$');
+			if( from==3){
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 5;
+				$('#OrderPrices').val(plus);
+				$('#OrderPrice').val(plus);
+			}else{
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 55;
+				$('#OrderPrice').val(plus);
+				$('#OrderPrices').val(plus);
+			}
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 0.319;
-			$('#OrderPrice').val(price);
+			total = parseFloat(priced)* 0.319;
 			$('#OrderDuit').val('MYR');
+			$('#OrderPrices').val(priced);
+			$('#OrderDuitd').val('MYR');
+			$('#OrderPrice').val(priced);
 		}
 		$('#OrderQuantityd').val(total);
 		$('#OrderQuantity').val(total); 
-		
 	});
 	 
 	$("#OrderEcurrTypeId").change(function(){
 		var total         = 0;
 		var percent    = 0;
-		var payment  = $('#OrderPaymentMethodId').val();
-		var price       = $('#OrderPriced').val();
+		var to			= $('#OrderPaymentMethodId').val();
+		var from		= $('#OrderBankId').val();
+		var priced      = $('#OrderPriced').val();
 		var rate         = $('#OrderEcurrTypeId').val();
 		
 		if (rate==1){ percent  = 0.98 }
@@ -77,18 +134,34 @@ $(document).ready(function()
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 				 	
-		if ( payment == 3) {
-			total = parseFloat(price) * parseFloat(percent);
-			$('#OrderDuitd').val('$');
-			$('#OrderDuit').val('$');
+		if ( to == 3) {
+			if( from==3){
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 5;
+				$('#OrderDuitd').val('$');
+				$('#OrderDuit').val('$');
+				$('#OrderPrices').val(plus);
+				$('#OrderPrice').val(plus);
+			
+			}else{
+				total = parseFloat(priced) * parseFloat(percent);
+				plus =  parseFloat(priced) + 55;
+				$('#OrderPrice').val(plus);
+				$('#OrderPrices').val(plus);
+				$('#OrderDuitd').val('$');
+				$('#OrderDuit').val('$');
+			}
 		} else {
-			total = (parseFloat(price) * parseFloat(percent))* 0.319;
+			total = parseFloat(priced) *0.319;
 			$('#OrderDuit').val('MYR');
+			$('#OrderPrices').val('');
+			$('#OrderDuitd').val('');
+			$('#OrderPrice').val(priced);
 		}
 		$('#OrderQuantityd').val(total);
 		$('#OrderQuantity').val(total); 
-	
-	});	
+		
+	});
 });
 </script>
 
@@ -106,6 +179,11 @@ $(document).ready(function()
 					<?php echo $this->Form->input('user_id', array('type' => 'hidden' ,'value' => $user_id));?>
 					    
 					<label>Payment  Channel</label>
+					<label>From (Your payment channel)</label>
+					<?php echo $this->Form->input('bank_id',array('label' => "",'empty'=>'Select' ,'div' => false,));
+					 ?>
+					
+					<label>To (TrustXe payment channel)</label>
 					<?php echo $this->Form->input('payment_method_id',array('label' => "",'empty'=>'Select' ,'div' => false,));?>
 					<label>Amount To  Transfer</label>
 					<div class="form-inline">
@@ -116,7 +194,7 @@ $(document).ready(function()
 						
 					?>
 					</div>
-					<label>Amount To  Be Paid (for technocash only service charge $50)</label>
+					<label>Amount To  Be Paid (service charge)</label>
 					<div class="form-inline">
 					<?php 
 						echo $this->Form->input('duitd', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));

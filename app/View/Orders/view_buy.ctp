@@ -16,7 +16,12 @@
 									<?php echo h($order['Order']['price']); ?>
 									&nbsp;
 								</dd><p>
-							<dt>Payment Channel</dt>
+							<dt>Payment From</dt>
+								<dd>
+									<?php echo $this->Html->link($order['Bank']['name'], array('controller' => 'banks', 'action' => 'view', $order['Bank']['id'])); ?>
+									&nbsp;
+								</dd><p>
+							<dt>Payment  To</dt>
 								<dd>
 									<?php echo $this->Html->link($order['PaymentMethod']['name'], array('controller' => 'payment_methods', 'action' => 'view', $order['PaymentMethod']['id'])); ?>
 									&nbsp;

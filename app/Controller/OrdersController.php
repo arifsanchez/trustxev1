@@ -179,7 +179,8 @@ class OrdersController extends AppController {
 		//$products = $this->Order->Product->find('list');
 		$paymentMethods = $this->Order->PaymentMethod->find('list');
 		$orderStatuses = $this->Order->OrderStatus->find('list');
-		$this->set(compact('orderTypes', 'users', 'userEcurrs', 'ecurrTypes','products', 'paymentMethods', 'orderStatuses'));
+		$banks= $this->Order->Bank->find('list');
+		$this->set(compact('orderTypes', 'users', 'userEcurrs', 'ecurrTypes','products', 'paymentMethods', 'orderStatuses','banks'));
 	}
 	
 	public function edit_sell($id = null) {
@@ -239,9 +240,12 @@ class OrdersController extends AppController {
 			$this->request->data['Order']['order_type_id'] = 1;
 			$this->request->data['Order']['order_status_id'] = 1;
 			$this->Order->create();
+			
+			
 			if ($this->Order->save($this->request->data)) {
 				$this->Session->setFlash(__('The order has been saved'));
-				$this->redirect(array('action' => 'view_buy',$this->Order->id));
+				$this->redirect(array('action' => 'view_buy',$this->Order->id)
+				);
 			} else {
 				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
 			}
@@ -254,7 +258,8 @@ class OrdersController extends AppController {
 			'conditions' => array('UserEcurr.user_id' => $userId),
 			'fields' => array('UserEcurr.acc_no')
 		));
-		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods'));
+		$banks= $this->Order->Bank->find('list');
+		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
 	}
 	
 
