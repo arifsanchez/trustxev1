@@ -51,7 +51,8 @@ class OrdersController extends AppController {
 	public function view_buy($id = null) {
 	
 		$this->Order->id = $id;
-		$this->set('order', $this->Order->read(null, $id));
+		$getorder=$this->Order->read(null, $id);
+		$this->set('order',$getorder );
 		$userId = $this->UserAuth->getUserId();
 		$this->loadModel('Usermgmt.User');
 		$user = $this->User->find('list', array(
@@ -60,24 +61,14 @@ class OrdersController extends AppController {
 		)); 
 				
 	   if ($this->request->is('post') || $this->request->is('put'))  {
-				$this->request->data['Order']['acc_no'] 			= $account;
-				$this->request->data['Order']['product'] 			= $product;
-				$this->request->data['Order']['payment_to'] 		= $payment_to;
-				$this->request->data['Order']['payment_from'] 	= $payment_from;
-				$this->request->data['Order']['price'] 				= $price;
-			
 					if (isset($this->request->data['submit1'])) {
 						//send email payment detail to user
 						$email = new CakeEmail();
-						$email->viewVars(array('account' =>$account,'product'=>$product,'payment_to'=>$payment_to,
-										'payment_from'=>$payment_from,'price'=>$price,'id'=>$id,
-										));
 						$email->from(array('admin@trustxe.com' =>'trustxe'))
-						->template('payment','payment')
 						->emailFormat('both')
 						->to($user)
-						->subject('Details Of Payment')
-						->send();
+						->subject('TrustXe Details Of Payment')
+						->send('payment');
 						// send  sms notification to ceo
 						$HttpSocket = new HttpSocket();
 						$HttpSocket->post('http://bulk.ezlynx.net:7001/BULK/BULKMT.aspx', array(

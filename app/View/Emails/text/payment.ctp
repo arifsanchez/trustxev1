@@ -1,13 +1,6 @@
-<h1> BUY ORDER : # <?php echo $id ?> </h1>
-
-<p>Dear <?php echo $user['User']['firstname'] ?>,</p>
-
+<h1> BUY ORDER </h1>
+<p>Dear Sir/Madam,</p>
 <p>Thank you for your order. Below you will find all the information regarding your order </p>
-<p>Account : <?php echo $account?></p>
-<p>Amount+Fees : <?php echo $price?></p>
-<p>Method of payment : From (Your payment channel)<?php echo $payment_from ?> To (TrustXe ) <?php echo $payment_to ?></p>
-<p>Currency : <?php echo $product ?></p>
-
 <p>------------------------------------------------------</p>
 <h3>Here is our information for processing your order.</h3>
 
@@ -75,5 +68,5 @@
 <p>------------------------------------------------------</p>
 <p>If you have any order related questions, please contact us at support@trustxe.com and provide the Order ID :<?php echo $id ?> 
 <p>Thank you for your business.</p>
-<p><a href="www.trustxe.com"> www.trustxe.com</a></p>
+<p>www.trustxe.com</p>
 	

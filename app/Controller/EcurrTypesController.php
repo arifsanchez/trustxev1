@@ -48,6 +48,25 @@ class EcurrTypesController extends AppController {
 			}
 		}
 	}
+	
+	
+		public function editrate($id = null) {
+		$this->EcurrType->id = $id;
+		if (!$this->EcurrType->exists()) {
+			throw new NotFoundException(__('Invalid ecurr type'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->EcurrType->save($this->request->data)) {
+				$this->Session->setFlash(__('The ecurr type has been saved'));
+				$this->redirect(array('action' => 'dashboard'));
+			} else {
+				$this->Session->setFlash(__('The ecurr type could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->request->data = $this->EcurrType->read(null, $id);
+		}
+	}
+	
 
 /**
  * edit method

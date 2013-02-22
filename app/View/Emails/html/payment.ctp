@@ -1,12 +1,12 @@
-<h1> BUY ORDER : # <?php echo $id ?> </h1>
+<h1> BUY ORDER : # <?php echo$order['Order']['id']?> </h1>
 
 <p>Dear <?php echo $user['User']['firstname'] ?>,</p>
 
 <p>Thank you for your order. Below you will find all the information regarding your order </p>
-<p>Account : <?php echo $account?></p>
-<p>Amount+Fees : <?php echo $price?></p>
-<p>Method of payment : From (Your payment channel)<?php echo $payment_from ?> To (TrustXe ) <?php echo $payment_to ?></p>
-<p>Currency : <?php echo $product ?></p>
+<p>Account : <?php echo $order['UserEcurr']['acc_no']?></p>
+<p>Amount+Fees : <?php echo $order['Order']['price']?></p>
+<p>Method of payment : From (Your payment channel)<?php echo $order['Bank']['name'] ?> To (TrustXe ) <?php echo $order['PaymentMethod']['name'] ?></p>
+<p>Currency : <?php echo $order['EcurrType']['name']?></p>
 
 <p>------------------------------------------------------</p>
 
