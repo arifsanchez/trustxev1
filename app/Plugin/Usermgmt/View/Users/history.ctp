@@ -8,34 +8,34 @@
 	
 	<div class="span8 well">
 	<table  class="table table-striped">
-	 <caption>...</caption>
+	 <caption></caption>
 	  <thead>
 	<tr>
 			<th><strong><h4>order</h4></strong></th>
 			<th><strong><h4>product</h4></strong></th>
 			<th><strong><h4>quantity</h4></strong></th>
 			<th><strong><h4>price</h4></strong></th>
-			<th><strong><h4>payment method</h4></strong></th>
+			<th><strong><h4> my payment method</h4></strong></th>
 			<th><strong><h4>order status</h4></strong></th>
 			
 	</tr>
 	 </thead>
 	 <tbody>
-	<?php 	foreach ($user_leave as $order): ?>
+	<?php 	foreach ($history as $order): ?>
 	<tr>
 		<td>
-			<?php echo $this->Html->link($order['OrderType']['name'], array('controller' => 'order_types', 'action' => 'view', $order['OrderType']['id'])); ?>&nbsp;&nbsp;
+			<center><?php echo $order['OrderType']['name']; ?></center>&nbsp;&nbsp;
 		</td>
 		<td>
-			<?php echo $this->Html->link($order['EcurrType']['name'], array('controller' => 'ecurr_types', 'action' => 'view', $order['EcurrType']['id'])); ?>&nbsp;&nbsp;
+			<center><?php echo $order['EcurrType']['name']; ?></center>&nbsp;&nbsp;
 		</td>
-		<td><?php echo h($order['Order']['quantity']); ?>&nbsp;</td>
-		<td><?php echo h($order['Order']['price']); ?>&nbsp;</td>
+		<td><center><?php echo h($order['Order']['quantity']); ?></center></td>
+		<td><center><?php echo h($order['Order']['price']); ?></center>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($order['PaymentMethod']['name'], array('controller' => 'payment_methods', 'action' => 'view', $order['PaymentMethod']['id'])); ?>
+			<center><?php echo $order['Bank']['name']; ?></center>
 		</td>
 		<td>
-			<?php echo $this->Html->link($order['OrderStatus']['name'], array('controller' => 'order_statuses', 'action' => 'view', $order['OrderStatus']['id'])); ?>&nbsp;&nbsp;
+			<center><?php echo $order['OrderStatus']['name']; ?></center>&nbsp;&nbsp;
 		</td>
 		
 	</tr>

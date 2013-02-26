@@ -1,5 +1,5 @@
 
-<?php echo $ip ?>
+
 <script>
 $(document).ready(function()
 {	
@@ -173,42 +173,36 @@ $(document).ready(function()
 	<div class="span8 well">
 	<?php echo $this->Form->create('Order', array('class' => 'form')); ?>
 		<div class="row-fluid">
-			<div class="span6">
 				<fieldset>
-					<legend>I Want To Get</legend>		
-						<?php echo $this->Form->input('user_id', array('type' => 'hidden' ,'value' => $user_id));?>
-						<label>You Need</label>	
-						<?php echo $this->Form->input('quantity', array('label' =>""));?>
-						<label>E-Currency</label>
+					<legend>Buy eCurrency</legend>		
+					<?php echo $this->Form->input('user_id', array('type' => 'hidden' ,'value' => $user_id));?>
+					
+					<div class="form-inline">
+						<label>You Need</label>
+						<?php echo $this->Form->input('quantity', array('label' => "",'div' => false,));?>
 						<?php echo $this->Form->input('ecurr_type_id',array('label' => "",'div' => false, 'empty'=>'Select'));?>
-						<label>E-Currency Account</label>
-						<?php  echo $this->Form->input('user_ecurr_id' ,array('label' => "",'div' => false,'empty'=>'Select' ));?>
-				</fieldset>
-			</div>
-			<div class="span6">
-				<fieldset>	
-					<legend>I Need To pay</legend>
+					</div>
+					<div class="form-inline">
 						<label>Payment  Channel</label>
-						<?php echo $this->Form->input('payment_method_id',array('label' => "",'empty'=>'Select' ,'div' => false,));?>
-						
-						<label>The Comission is:</label>
-						<?php echo $this->Form->input('comission', array('label' => "",'div' => false,'disabled' => 'disabled' ,'type'=>'text',));?>
-						
-						<label>Amount To  Be Paid </label>
-						<div class="form-inline">
-							<?php 
-								echo $this->Form->input('duitd', array('label' => "",'div' => false,'class'=>'span2','disabled' => 'disabled',));
-								echo '&nbsp';
-								echo $this->Form->input('prices', array('label' => "",'div' => false,'disabled' => 'disabled'));
-								echo $this->Form->input('price', array('label' => "",'div' => false,'type'=>'hidden'));
-								echo '&nbsp';
-							?>
-						</div>
-				</fieldset>
-			</div>
+						<?php echo $this->Form->input('bank_id',array('label' => "",'empty'=>'Select' ,'div' => false,)); ?>
+					</div>
+					<div class="form-inline">
+						<label>The commision is </label>
+						<?php echo $this->Form->input('commision', array('label' => "",'div' => false,));?>
+					</div>
+					<div class="form-inline">
+						<label>You Must Pay </label>
+						<?php echo $this->Form->input('price', array('label' => "",'div' => false,));?>
+					</div>
+					<div class="form-inline">
+						<label>Your E-currency account </label>
+						<?php echo $this->Form->input('ecurrency_acc', array('label' => "",'div' => false,));?>
+					</div>
+			</fieldset>
 		</div>
-	
+			
+		</div>
 		<?php echo $this->Form->Submit(__('Order Now'), array('class'=>'btn btn-primary btn-large btn-block'));?>
 		<?php echo $this->Form->end(); ?>
-	</div>	
+	</div>
 </div>

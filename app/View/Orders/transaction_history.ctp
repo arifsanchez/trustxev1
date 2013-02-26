@@ -1,12 +1,62 @@
+<?php echo $this->Search->searchForm('Order', array('legend' => 'Search', "updateDivId" => "updateOrder")); ?>
 <h2><span>Transaction History</span></h2>
 
 <div class="row-fluid">
-	<div class="span4 alert">
-		<?php echo $this->element('rates'); ?>
-	</div>
+	<div class="span12 well">
+	<table cellpadding="0" cellspacing="0">
+	 <tr>
+			<th><?php echo $this->Paginator->sort('order_type_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('user_ecurr_id'); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('quantity'); ?></th>
+			<th><?php echo $this->Paginator->sort('price'); ?></th>
+			<th><?php echo $this->Paginator->sort('payment_method_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('order_status_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('created'); ?></th>
+			<th><?php echo $this->Paginator->sort('modified'); ?></th>
+			<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
 	
-	<div class="span8 well">
-	 /* Table Listing order history */
+	<thead>
+			<tr>
+				<th><?php echo __('SL');?></th>
+				<th><?php echo $this->Paginator->sort('User.id', __('User Id')); ?></th>
+				<th><?php echo $this->Paginator->sort('User.first_name', __('Name')); ?></th>
+				<th><?php echo $this->Paginator->sort('User.username', __('Username')); ?></th>
+				<th><?php echo $this->Paginator->sort('User.email', __('Email')); ?></th>
+				<th><?php echo __('Groups(s)');?></th>
+				<th><?php echo $this->Paginator->sort('User.email_verified', __('Email Verified')); ?></th>
+				<th><?php echo $this->Paginator->sort('User.active', __('Status')); ?></th>
+				<th><?php echo $this->Paginator->sort('User.created', __('Created')); ?></th>
+				<th style="width:150px;"><?php echo __('Action');?></th>
+			</tr>
+		</thead>
+	<?php
+	foreach ($orders as $order): ?>
+	<tr>
+		<td>
+			<?php echo $this->Html->link($order['OrderType']['name'], array('controller' => 'order_types', 'action' => 'view', $order['OrderType']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($order['UserEcurr']['id'], array('controller' => 'user_ecurrs', 'action' => 'view', $order['UserEcurr']['id'])); ?>
+		</td>
+		
+		<td><?php echo h($order['Order']['quantity']); ?>&nbsp;</td>
+		<td><?php echo h($order['Order']['price']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($order['PaymentMethod']['name'], array('controller' => 'payment_methods', 'action' => 'view', $order['PaymentMethod']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($order['OrderStatus']['name'], array('controller' => 'order_statuses', 'action' => 'view', $order['OrderStatus']['id'])); ?>
+		</td>
+		<td><?php echo h($order['Order']['created']); ?>&nbsp;</td>
+		<td><?php echo h($order['Order']['modified']); ?>&nbsp;</td>
+		<td class="actions">
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $order['Order']['id'])); ?>
+		</td>
+	</tr>
+<?php endforeach; ?>
+	</table>
 	</div>
 </div>
 

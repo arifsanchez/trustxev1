@@ -190,17 +190,17 @@ class UsersController extends UserMgmtAppController {
 		if(!empty($this->request->params['named']['status'])){
 			$userId = $this->UserAuth->getUserId();
 			$this->loadModel('Order');
-			$user_leave = $this->paginate('Order',
+			$history = $this->paginate('Order',
 				array("Order.user_id" => $userId, "Order.status_id" => $this->request->params['named']['status'])
 			);
-			$this->set('user_leave',$user_leave);
+			$this->set('history',$history);
 		} else {
 		$userId = $this->UserAuth->getUserId();
 			$this->loadModel('Order');
-			$user_leave = $this->paginate('Order',
+			$history = $this->paginate('Order',
 				array("Order.user_id" => $userId)
 			);
-			$this->set('user_leave',$user_leave);
+			$this->set('history',$history);
 		}
 	}
 	

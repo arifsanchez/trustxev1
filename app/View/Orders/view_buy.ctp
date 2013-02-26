@@ -18,22 +18,22 @@
 								</dd><p>
 							<dt>Payment From</dt>
 								<dd>
-									<?php echo $this->Html->link($order['Bank']['name'], array('controller' => 'banks', 'action' => 'view', $order['Bank']['id'])); ?>
+									<?php echo $order['Bank']['name']; ?>
 									&nbsp;
 								</dd><p>
 							<dt>Payment  To</dt>
 								<dd>
-									<?php echo $this->Html->link($order['PaymentMethod']['name'], array('controller' => 'payment_methods', 'action' => 'view', $order['PaymentMethod']['id'])); ?>
+									<?php echo $order['PaymentMethod']['name']; ?>
 									&nbsp;
 								</dd><p>
 							<dt>eCurrency</dt>
 								<dd>
-									<?php echo $this->Html->link($order['EcurrType']['name'], array('controller' => 'ecurr_types', 'action' => 'view', $order['EcurrType']['id'])); ?>
+									<?php echo $order['EcurrType']['name']; ?>
 									&nbsp;
 								</dd><p>
 							<dt>eCurrency Account</dt>
 								<dd>
-									<?php echo $this->Html->link($order['UserEcurr']['acc_no'], array('controller' => 'user_ecurrs', 'action' => 'view', $order['UserEcurr']['id'])); ?>
+									<?php echo $order['UserEcurr']['acc_no']; ?>
 									&nbsp;
 								</dd><p>
 							<dt>Amount  To Get</dt>
@@ -43,7 +43,7 @@
 								</dd><p>
 						<dt>Order Status</dt>
 								<dd>
-									<?php echo $this->Html->link($order['OrderStatus']['name'], array('controller' => 'order_statuses', 'action' => 'view', $order['OrderStatus']['id'])); ?>
+									<?php echo $order['OrderStatus']['name']; ?>
 									&nbsp;
 								</dd><p>
 						</dl>

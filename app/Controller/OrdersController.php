@@ -235,6 +235,46 @@ class OrdersController extends AppController {
 	
 	public function buy(){
 	
+	 if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //check ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }else if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //to check ip is pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+	
+$this->set('ip', $ip);
+		
+	 if ($this->request->is('post')) {
+			$this->request->data['Order']['order_type_id'] = 1;
+			$this->request->data['Order']['order_status_id'] = 1;
+			$this->Order->create();
+			
+			
+			if ($this->Order->save($this->request->data)) {
+				$this->Session->setFlash(__('The order has been saved'));
+				$this->redirect(array('action' => 'view_buy',$this->Order->id)
+				);
+			} else {
+				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
+			}
+		}
+		$userId = $this->UserAuth->getUserId();
+		$this->set('user_id', $userId);
+		$ecurrTypes = $this->Order->EcurrType->find('list');
+		$paymentMethods = $this->Order->PaymentMethod->find('list');
+		$userEcurrs = $this->Order->UserEcurr->find('list', array(
+			'conditions' => array('UserEcurr.user_id' => $userId),
+			'fields' => array('UserEcurr.acc_no')
+		));
+		$banks= $this->Order->Bank->find('list');
+		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
+	}
+	
+	public function buy_malaysia(){
+	
 	 if ($this->request->is('post')) {
 			$this->request->data['Order']['order_type_id'] = 1;
 			$this->request->data['Order']['order_status_id'] = 1;
@@ -290,5 +330,18 @@ class OrdersController extends AppController {
 		$userId = $this->UserAuth->getUserId();
 		$this->Order->recursive = 0;
 		$this->set('orders', $this->paginate('Order', array(), array()));
+	}
+	
+	public function buy_history(){
+		$order=$this->Order->find('all',array(
+			'conditions' => array('Order.order_type_id'=>'1'),
+			'recursive'=>-1,
+		));
+		$this->set('orders', $order);
+		debug($order);
+	}
+	
+	public function sell_history(){
+		
 	}
 }
