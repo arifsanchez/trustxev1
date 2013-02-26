@@ -3,46 +3,6 @@
 <script>
 $(document).ready(function()
 {	
-	
-	$("#OrderBankId").change(function(){
-	   
-		var total         = 0;
-		var percent    = 0;
-		var to			= $('#OrderPaymentMethodId').val();
-		var from		= $('#OrderBankId').val();
-		var priced      = $('#OrderPriced').val();
-		var rate         = $('#OrderEcurrTypeId').val();
-		
-		if (rate==1){ percent  = 0.98 }
-		if (rate==2) { percent =0.89}
-		if (rate==3) {percent =3.4}
-		if(rate==4) {percent =10650}
-				 	
-		if ( to== 3) {
-			$('#OrderDuitd').val('$');
-			$('#OrderDuit').val('$');
-			if( from==3){
-				total = parseFloat(priced) * parseFloat(percent);
-				plus =  parseFloat(priced) + 5;
-				$('#OrderPrices').val(plus);
-				$('#OrderPrice').val(plus);
-			}else{
-				total = parseFloat(priced) * parseFloat(percent);
-				plus =  parseFloat(priced) + 55;
-				$('#OrderPrice').val(plus);
-				$('#OrderPrices').val(plus);
-			}
-		} else {
-			total = parseFloat(priced) *0.319;
-			$('#OrderDuit').val('MYR');
-			$('#OrderPrices').val(priced);
-			$('#OrderDuitd').val('MYR');
-			$('#OrderPrice').val(priced);
-		}
-		$('#OrderQuantityd').val(total);
-		$('#OrderQuantity').val(total); 
-		
-	});
 	$("#OrderPaymentMethodId").change(function(){
 	   
 		var total         = 0;

@@ -244,8 +244,8 @@ class OrdersController extends AppController {
     }else{
         $ip = $_SERVER['REMOTE_ADDR'];
     }
-	
-$this->set('ip', $ip);
+		debug($ip);
+		$this->set('ip', $ip);
 		
 	 if ($this->request->is('post')) {
 			$this->request->data['Order']['order_type_id'] = 1;
