@@ -8,8 +8,11 @@ class GeosController extends AppController {
 
 
 	public function checkip(){
-		 #$ip = $_SERVER['REMOTE_ADDR'];
-		$ip = $_SERVER['HTTP_X_REAL_IP'];
+		//$ip = $_SERVER['REMOTE_ADDR'];
+		//$ip = $_SERVER['HTTP_X_REAL_IP'];
+		//$ip = getenv('REMOTE_ADDR');
+		$ip = getenv('X-Forwarded-For');
+
 		debug($ip); 
 		
 		
