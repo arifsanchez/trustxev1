@@ -8,7 +8,8 @@ class GeosController extends AppController {
 
 
 	public function checkip(){
-		 $ip = $_SERVER['REMOTE_ADDR'];
+		 #$ip = $_SERVER['REMOTE_ADDR'];
+		 $ip = env['HTTP_X_REAL_IP'] ||= env['REMOTE_ADDR']
 		 $HttpSocket = new HttpSocket();
 		/* $results = $HttpSocket->post('http://api.ipinfodb.com/v3/ip-country/',array(
 			   'key'			=>'b3305824775cffe95f11e87bad777ca407f1cb113fee069461b2bcf62cee0de5',
