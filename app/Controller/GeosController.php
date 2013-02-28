@@ -15,7 +15,7 @@ class GeosController extends AppController {
 			'conditions' => array($condition),
 			'fields' => array('name')
 		)); 
-		debug($a);die();
+		debug($ip);die();
 	
 	}
 
