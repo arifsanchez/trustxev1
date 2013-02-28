@@ -10,10 +10,12 @@ class GeosController extends AppController {
 	public function checkip(){
 		//$ip = $_SERVER['REMOTE_ADDR'];
 		//$ip = $_SERVER['HTTP_X_REAL_IP'];
-		//$ip = getenv('REMOTE_ADDR');
-		$ip = getenv('X-Forwarded-For');
+		$ip1 = getenv();
+		$ip = getenv('HTTP_X_FORWARDED_FOR');
+		
 
 		debug($ip); 
+		debug($ip1);
 		
 		
 		 $HttpSocket = new HttpSocket();
