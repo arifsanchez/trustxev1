@@ -10,57 +10,41 @@ $(document).ready(function()
 		var payment  = $('#OrderPaymentMethodId').val();
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
-		
-			
 		if (rate==1){ percent  = 0.98 }
 		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
 		
 		if ( payment == 3) {
-		
 			total = parseFloat(price) * parseFloat(percent);
 			$('#OrderDuit').val('$');
-			
 		} else {
-		
 			total = parseFloat(price) * 3.3;
 			$('#OrderDuit').val('MYR');
 		}
-		
 		$('#OrderPriced').val(total);
 		$('#OrderPrice').val(total);
-		
-		
 	});
 	
 	
 	$("#OrderQuantity").change(function(){
-	   
 		var total         = 0;
 		var payment  = $('#OrderPaymentMethodId').val();
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
-		
 		if (rate==1){ percent  = 0.98 }
 		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
-		
 		if ( payment == 3) {
-		
 			total = parseFloat(price) * parseFloat(percent);
 			$('#OrderDuit').val('$');
-			
 		} else {
-		
 			total = parseFloat(price) *  3.3;
 			$('#OrderDuit').val('MYR');
 		}
-		
 		$('#OrderPriced').val('123');
 		$('#OrderPrice').val(total);
-		
 	});
 	 
 	$("#OrderEcurrTypeId").change(function(){
@@ -68,26 +52,19 @@ $(document).ready(function()
 		var payment  = $('#OrderPaymentMethodId').val();
 		var price       = $('#OrderQuantity').val();
 		var rate         = $('#OrderEcurrTypeId').val();
-		
 		if (rate==1){ percent  = 0.98 }
 		if (rate==2) { percent =0.98}
 		if (rate==3) {percent =3.4}
 		if(rate==4) {percent =10650}
-		
 		if ( payment == 3) {
-		
 			total = parseFloat(price) * parseFloat(percent);
 			$('#OrderDuit').val('$');
-			
 		} else {
-		
 			total = parseFloat(price) * 3.3;
 			$('#OrderDuit').val('MYR');
 		}
-		
 		$('#OrderPriced').val(total);
 		$('#OrderPrice').val(total);
-	
 	});	
 });
 </script>
@@ -104,12 +81,12 @@ $(document).ready(function()
 				<fieldset>
 					<legend>I Want To Sell</legend>		
 					<?php echo $this->Form->input('user_id', array('type' => 'hidden' ,'value' => $user_id));?>
+					<label>Amount To  Sell</label>
+					<?php echo $this->Form->input('quantity', array('label' => "",'div' => false,));?>
 					<label>E-Currency</label>
 					<?php echo $this->Form->input('ecurr_type_id',array('label' => "",'empty'=>'Select', 'div' => false, ));?>
 					<label>E-Currency Account</label>
 					<?php  echo $this->Form->input('user_ecurr_id' ,array('label' => "",'empty'=>'Select', 'div' => false, ));?>
-					<label>Amount To  Transfer</label>
-					<?php echo $this->Form->input('quantity', array('label' => "",'div' => false,));?>
 				</fieldset>
 			</div>
 			<div class="span6">
@@ -117,10 +94,6 @@ $(document).ready(function()
 					<legend>I Will Get</legend>	
 					<label>Payment  Channel</label>
 					<?php echo $this->Form->input('payment_method_id',array('label' => "",'empty'=>'Select' ,'div' => false, ));?>
-					<label>Account Name</label>
-					<?php echo $this->Form->input('acc_name',array('label' => "",'div' => false, ));?>
-					<label>Account Number</label>
-					<?php echo $this->Form->input('acc_no',array('label' => "",'div' => false, ));?>
 					<label>Amount i Receive</label>	
 					<div class="form-inline">
 					<?php 

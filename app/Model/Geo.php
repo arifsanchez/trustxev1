@@ -1,19 +1,21 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * PaymentMethod Model
- *
- * @property Order $Order
- */
-class Bank extends AppModel {
 
-/**
- * Validation rules
- *
- * @var array
- */
+class Geo extends AppModel {
+
+
+//get ip to reveal the country
+	/*public function getIp(){
+	
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$a = $this->Geo->find('all');
+	
+		debug($a),die();
+	
+	}*/
+	
 	public $validate = array(
-		'user_id' => array(
+		'a1' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -24,9 +26,9 @@ class Bank extends AppModel {
 			),
 		),
 		
-		'bank_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		'a2' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,9 +37,9 @@ class Bank extends AppModel {
 			),
 		),
 		
-		'acc_no' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		'a3' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -46,9 +48,9 @@ class Bank extends AppModel {
 			),
 		),
 		
-		'acc_name' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		'a4' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -56,9 +58,20 @@ class Bank extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'bank_name' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		
+		'code' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'name' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -67,45 +80,7 @@ class Bank extends AppModel {
 			),
 		),
 	);
+	
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasMany associations
- *
- * @var array
- */
- 
- public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'EcurrType' => array(
-			'className' => 'EcurrType',
-			'foreignKey' => 'ecurr_type_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-	public $hasMany = array(
-		'Order' => array(
-			'className' => 'Order',
-			'foreignKey' => 'bank_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
 
 }

@@ -25,7 +25,7 @@ class UserEcurr extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'ecurr_type_id' => array(
+		'bank_name' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -72,13 +72,7 @@ class UserEcurr extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'EcurrType' => array(
-			'className' => 'EcurrType',
-			'foreignKey' => 'ecurr_type_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
+		
 	);
 
 /**

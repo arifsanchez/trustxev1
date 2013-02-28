@@ -6,6 +6,8 @@ App::uses('HttpSocket', 'Network/Http');
 
 class OrdersController extends AppController {
 
+
+
 	function sms(){
   
 		  if(!empty($this->request->data)){
@@ -32,6 +34,8 @@ class OrdersController extends AppController {
 		   }
 		  }
    }
+   
+   
 	
 	
 	public $paginate = array(
@@ -108,7 +112,7 @@ class OrdersController extends AppController {
 		
 		if ($this->request->is('post') || $this->request->is('put')){
 					
-					//debug($this->request->data);
+					debug($this->request->data);
 					if (isset($this->request->data['submit1'])) {
 					
 						if($this->request->data['Order']['type']==1){
@@ -121,6 +125,8 @@ class OrdersController extends AppController {
 				} else if (isset($this->request->data['submit2'])) {
 					$this->redirect(array('action' =>'edit_sell',$this->Order->id));
 				}
+				
+				
 		}
 	}
 
@@ -244,15 +250,12 @@ class OrdersController extends AppController {
     }else{
         $ip = $_SERVER['REMOTE_ADDR'];
     }
-		debug($ip);
 		$this->set('ip', $ip);
 		
 	 if ($this->request->is('post')) {
 			$this->request->data['Order']['order_type_id'] = 1;
 			$this->request->data['Order']['order_status_id'] = 1;
 			$this->Order->create();
-			
-			
 			if ($this->Order->save($this->request->data)) {
 				$this->Session->setFlash(__('The order has been saved'));
 				$this->redirect(array('action' => 'view_buy',$this->Order->id)
@@ -273,33 +276,7 @@ class OrdersController extends AppController {
 		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
 	}
 	
-	public function buy_malaysia(){
 	
-	 if ($this->request->is('post')) {
-			$this->request->data['Order']['order_type_id'] = 1;
-			$this->request->data['Order']['order_status_id'] = 1;
-			$this->Order->create();
-			
-			
-			if ($this->Order->save($this->request->data)) {
-				$this->Session->setFlash(__('The order has been saved'));
-				$this->redirect(array('action' => 'view_buy',$this->Order->id)
-				);
-			} else {
-				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
-			}
-		}
-		$userId = $this->UserAuth->getUserId();
-		$this->set('user_id', $userId);
-		$ecurrTypes = $this->Order->EcurrType->find('list');
-		$paymentMethods = $this->Order->PaymentMethod->find('list');
-		$userEcurrs = $this->Order->UserEcurr->find('list', array(
-			'conditions' => array('UserEcurr.user_id' => $userId),
-			'fields' => array('UserEcurr.acc_no')
-		));
-		$banks= $this->Order->Bank->find('list');
-		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
-	}
 	
 
 	public function sell(){
