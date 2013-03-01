@@ -15,10 +15,10 @@ class GeosController extends AppController {
 		$results = $HttpSocket->post('http://api.ipinfodb.com/v3/ip-country/?key=b3305824775cffe95f11e87bad777ca407f1cb113fee069461b2bcf62cee0de5&ip='.$ipla.'&format=json');
 		$a = json_decode($results,true);
 		
-			foreach($a as $ip):
-			 debug ($ip['countryName']) ;
+			$b = $a['countryName'];
+			debug($b);
 			
-			endforeach;
+			
 			
 		debug($a);die();
 	
