@@ -232,27 +232,34 @@ class OrdersController extends AppController {
 	
 	
 	public function buy(){
-	
 	 $HttpSocket = new HttpSocket();		
 		$ipla = getenv('HTTP_X_FORWARDED_FOR');
 		$results = $HttpSocket->post('http://api.ipinfodb.com/v3/ip-country/?key=b3305824775cffe95f11e87bad777ca407f1cb113fee069461b2bcf62cee0de5&ip='.$ipla.'&format=json');
 		$a = json_decode($results,true);
 		$b = $a['countryName'];
 		if($b == 'MALAYSIA'){
-				$paymentMethod= $this->Order->PaymentMethod->find('list', array(
-					'conditions' => array('PaymentMethod.id' => 1,2),
+				$paymentMethods= $this->Order->PaymentMethod->find('list', array(
+					'conditions' => array('PaymentMethod.id' =>array(1,2)),
 					'fields' => array('PaymentMethod.name')
 					
 				));
 				
 			}else{
-				
-				$paymentMethod= $this->Order->PaymentMethod->find('list', array(
+				$paymentMethods= $this->Order->PaymentMethod->find('list', array(
 					'conditions' => array('PaymentMethod.id' => 3),
 					'fields' => array('PaymentMethod.name')
 					));
 			}
-			debug($paymentMethod);die();
+			//debug($paymentMethod);die();
+		$userId = $this->UserAuth->getUserId();
+		$this->set('user_id', $userId);
+		$ecurrTypes = $this->Order->EcurrType->find('list');
+		$userEcurrs = $this->Order->UserEcurr->find('list', array(
+			'conditions' => array('UserEcurr.user_id' => $userId),
+			'fields' => array('UserEcurr.acc_no')
+		));
+		$banks= $this->Order->Bank->find('list');
+		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
 		
 	 if ($this->request->is('post')) {
 			$this->request->data['Order']['order_type_id'] = 1;
@@ -266,16 +273,7 @@ class OrdersController extends AppController {
 				$this->Session->setFlash(__('The order could not be saved. Please, try again.'));
 			}
 		}
-		$userId = $this->UserAuth->getUserId();
-		$this->set('user_id', $userId);
-		$ecurrTypes = $this->Order->EcurrType->find('list');
 		
-		$userEcurrs = $this->Order->UserEcurr->find('list', array(
-			'conditions' => array('UserEcurr.user_id' => $userId),
-			'fields' => array('UserEcurr.acc_no')
-		));
-		$banks= $this->Order->Bank->find('list');
-		$this->set(compact('userEcurrs', 'ecurrTypes','paymentMethods','banks'));
 	}
 	
 	

@@ -11,19 +11,10 @@
 					<legend>Buy eCurrency Details</legend>
 						<div class="span8 offset2 ">
 						<dl class="dl-horizontal" >
-							<dt>Amount  To Transfer</dt>
+							
+							<dt>Amount  To Get</dt>
 								<dd>
-									<?php echo h($order['Order']['price']); ?>
-									&nbsp;
-								</dd><p>
-							<dt>Payment From</dt>
-								<dd>
-									<?php echo $order['Bank']['name']; ?>
-									&nbsp;
-								</dd><p>
-							<dt>Payment  To</dt>
-								<dd>
-									<?php echo $order['PaymentMethod']['name']; ?>
+									<?php echo h($order['Order']['quantity']); ?>
 									&nbsp;
 								</dd><p>
 							<dt>eCurrency</dt>
@@ -36,11 +27,19 @@
 									<?php echo $order['UserEcurr']['acc_no']; ?>
 									&nbsp;
 								</dd><p>
-							<dt>Amount  To Get</dt>
+							<dt>Amount  To Transfer</dt>
 								<dd>
-									<?php echo h($order['Order']['quantity']); ?>
+									<?php echo h($order['Order']['price']); ?>
 									&nbsp;
 								</dd><p>
+							
+							<dt>Payment  To</dt>
+								<dd>
+									<?php echo $order['PaymentMethod']['name']; ?>
+									&nbsp;
+								</dd><p>
+							
+							
 						<dt>Order Status</dt>
 								<dd>
 									<?php echo $order['OrderStatus']['name']; ?>
