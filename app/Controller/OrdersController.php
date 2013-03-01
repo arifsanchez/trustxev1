@@ -233,16 +233,26 @@ class OrdersController extends AppController {
 	
 	public function buy(){
 	
-	 if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //check ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }else if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        //to check ip is pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-		$this->set('ip', $ip);
+	 $HttpSocket = new HttpSocket();		
+		$ipla = getenv('HTTP_X_FORWARDED_FOR');
+		$results = $HttpSocket->post('http://api.ipinfodb.com/v3/ip-country/?key=b3305824775cffe95f11e87bad777ca407f1cb113fee069461b2bcf62cee0de5&ip='.$ipla.'&format=json');
+		$a = json_decode($results,true);
+		$b = $a['countryName'];
+		if($b == 'MALAYSIA'){
+				$paymentMethod= $this->Order->PaymentMethod->find('list', array(
+					'conditions' => array('PaymentMethod.id' => 1,2),
+					'fields' => array('PaymentMethod.name')
+					
+				));
+				
+			}else{
+				
+				$paymentMethod= $this->Order->PaymentMethod->find('list', array(
+					'conditions' => array('PaymentMethod.id' => 3),
+					'fields' => array('PaymentMethod.name')
+					));
+			}
+			debug($paymentMethod);die();
 		
 	 if ($this->request->is('post')) {
 			$this->request->data['Order']['order_type_id'] = 1;
@@ -259,7 +269,7 @@ class OrdersController extends AppController {
 		$userId = $this->UserAuth->getUserId();
 		$this->set('user_id', $userId);
 		$ecurrTypes = $this->Order->EcurrType->find('list');
-		$paymentMethods = $this->Order->PaymentMethod->find('list');
+		
 		$userEcurrs = $this->Order->UserEcurr->find('list', array(
 			'conditions' => array('UserEcurr.user_id' => $userId),
 			'fields' => array('UserEcurr.acc_no')
