@@ -6,10 +6,7 @@ App::uses('HttpSocket', 'Network/Http');
 
 class OrdersController extends AppController {
 
-
-
 	function sms(){
-  
 		  if(!empty($this->request->data)){
 		   debug($this->data);
 		  
@@ -34,10 +31,7 @@ class OrdersController extends AppController {
 		   }
 		  }
    }
-   
-   
-	
-	
+   //limit for paginate
 	public $paginate = array(
 	    // other keys here.
 	    'maxLimit' => 7,
@@ -47,13 +41,11 @@ class OrdersController extends AppController {
 	);
 	 
 	public function index() {
-		
 		$this->Order->recursive = 0;
 		$this->set('orders', $this->paginate('Order', array(), array()));
 	}
 
 	public function view_buy($id = null) {
-	
 		$this->Order->id = $id;
 		$getorder=$this->Order->read(null, $id);
 		$this->set('order',$getorder );
