@@ -24,7 +24,20 @@ class GeosController extends AppController {
 	
 	}
 
- 
+	public function crl()
+  {
+	  $ch = curl_init('http://rss.news.yahoo.com/rss/oddlyenough');
+
+	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	  curl_setopt($ch, CURLOPT_HEADER, 0);
+
+	  $xml = simplexml_load_string(curl_exec($ch));
+
+	  curl_close($ch);
+
+	 debug ($xml);die();
+  }
+  
 }
 
 
