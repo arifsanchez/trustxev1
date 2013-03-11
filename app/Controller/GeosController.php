@@ -26,7 +26,7 @@ class GeosController extends AppController {
 
 	public function crl()
   {
-	  $ch = curl_init('http://rss.news.yahoo.com/rss/oddlyenough');
+	  /*$ch = curl_init('http://rss.news.yahoo.com/rss/oddlyenough');
 
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	  curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -35,7 +35,20 @@ class GeosController extends AppController {
 
 	  curl_close($ch);
 
-	 debug ($xml);die();
+	 debug ($xml);die();*/
+	 
+			
+		 $url = "http://rss.news.yahoo.com/rss/oddlyenough";
+		$agent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5";
+        $curl_thing = curl_init();
+        curl_setopt($curl_thing, CURLOPT_URL, $url);
+        curl_setopt($curl_thing, CURLOPT_HEADER, 0);
+        curl_setopt($curl_thing, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl_thing, CURLOPT_USERAGENT, $agent);
+        $curl_result = curl_exec($curl_thing);
+        curl_close($curl_thing);
+
+        debug( $curl_result);die();
   }
   
 }
