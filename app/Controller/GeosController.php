@@ -48,13 +48,8 @@ class GeosController extends AppController {
         $curl_result = curl_exec($curl_thing);
         curl_close($curl_thing);
 		
-		foreach ($curl_result->channel->item as $item):
-		$a = $item->title;
 		
-		endforeach();
-		
-		debug($a);die();
-        debug($item);die();
+        debug($curl_result);die();
   }
   
 }
