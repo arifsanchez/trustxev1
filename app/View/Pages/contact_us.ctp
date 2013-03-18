@@ -5,13 +5,13 @@
 	    <h4>Drop us a line</h4>
 	    <form class="form">
 	        <label for="name">Your name:</label>
-	        <input class="span4" type="text" id="name" placeholder="">
+	        <input class="span8" type="text" id="name" placeholder="">
 	        
 	        <label for="inputEmail">Email:</label>
-	        <input class="span4" type="text" id="inputEmail" placeholder="">
+	        <input class="span8" type="text" id="inputEmail" placeholder="">
 	        
 	        <label for="message">Your message:</label>
-	        <textarea class="span4" rows="4" id="message" placeholder=""></textarea>
+	        <textarea class="span8" rows="4" id="message" placeholder=""></textarea>
 	        
 	        <label class="checkbox">
 	            <input type="checkbox"> Send me a copy
