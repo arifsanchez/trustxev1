@@ -73,7 +73,7 @@
 	</tr>					
 </table>
 <p>------------------------------------------------------</p>
-<p>If you have any order related questions, please contact us at support@trustxe.com and provide the Order ID :<?php echo $id ?> </p>
+<p>If you have any order related questions, please contact us at support@trustxe.com and provide the Order ID </p>
 <p>Thank you for your business.</p>
 <p><a href="www.trustxe.com"> www.trustxe.com</a></p>
 	
