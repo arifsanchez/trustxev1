@@ -1,6 +1,6 @@
 <h1> BUY ORDER : # <?php echo $order['Order']['id']?> </h1>
 
-<p>Dear <?php echo $user['User']['username'] ?>,</p>
+<p>Dear <?php echo $order['User']['username'] ?>,</p>
 
 <p>Thank you for your order. Below you will find all the information regarding your order </p>
 <p>Account : <?php echo $order['UserEcurr']['acc_no']?></p>
