@@ -59,10 +59,11 @@ class OrdersController extends AppController {
 	   if ($this->request->is('post') || $this->request->is('put'))  {
 					if (isset($this->request->data['submit1'])) {
 					$Email = new CakeEmail('smtp');
-					
+					$Email->template('payment');
+					$Email->emailFormat('both');
 					$Email->from(array('admin@trustxe.com' => 'TrustXe'));
 					$Email->to('intannabilasalim@gmail.com');
-					$Email->subject('About');
+					$Email->subject('TrustXe');
 					$Email->send();
 					   
 					$this->redirect(array('action' =>'thank_buy'));
