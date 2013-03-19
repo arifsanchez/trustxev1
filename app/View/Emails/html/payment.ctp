@@ -5,9 +5,9 @@
 <p>Thank you for your order. Below you will find all the information regarding your order </p>
 <p>Account : <?php echo $order['UserEcurr']['acc_no']?></p>
 <p>Amount+Fees : <?php if ($order['PaymentMethod']['id'] == 3){ 
-											echo "$"  echo $order['Order']['price'];
+											echo "$" ; echo $order['Order']['price'];
 										}else{
-											echo "RM"  echo $order['Order']['price'];
+											echo "RM" ; echo $order['Order']['price'];
 										}
 							?> 			
 </p>
