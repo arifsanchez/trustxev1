@@ -13,7 +13,7 @@ class EmailConfig {
 		'transport' => 'Smtp',
 		'from' => array('admin@trustxe.com' => 'TrustXE'),
 		'host' => 'mail.trustxe.com',
-		'port' => 465,
+		'port' => 587,
 		'timeout' => 30,
 		'username' => 'admin@trustxe.com',
 		'password' => 'oipolloi88',
