@@ -64,7 +64,7 @@ class OrdersController extends AppController {
 					$Email->viewVars(array('order' => $getorder));
 					$Email->emailFormat('both');
 					$Email->from(array('admin@trustxe.com' => 'TrustXe'));
-					$Email->to('intannabilasalim@gmail.com');
+					$Email->to('mohdfaihz@gmail.com');
 					$Email->subject('TrustXe');
 					$Email->send();
 					   

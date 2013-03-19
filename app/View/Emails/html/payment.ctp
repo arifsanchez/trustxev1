@@ -7,7 +7,7 @@
 <p>Amount+Fees : <?php if ($order['PaymentMethod']['id'] == 3){ 
 											echo "$"  echo $order['Order']['price'];
 										}else{
-											echo "$"  echo $order['Order']['price'];
+											echo "RM"  echo $order['Order']['price'];
 										}
 							?> 			
 </p>
