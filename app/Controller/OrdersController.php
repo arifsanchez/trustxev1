@@ -61,9 +61,9 @@ class OrdersController extends AppController {
 					$Email = new CakeEmail('smtp');
 					
 					$Email->from(array('admin@trustxe.com' => 'TrustXe'));
-					$Email->to($user);
+					$Email->to('intannabilasalim@gmail.com');
 					$Email->subject('About');
-					$Email->send('My message');
+					$Email->send();
 					   
 					$this->redirect(array('action' =>'thank_buy'));
 					
