@@ -1,4 +1,4 @@
-<h1> BUY ORDER : # <?php echo$order['Order']['id']?> </h1>
+<h1> BUY ORDER : # <?php echo $order['Order']['id']?> </h1>
 
 <p>Dear <?php echo $user['User']['firstname'] ?>,</p>
 

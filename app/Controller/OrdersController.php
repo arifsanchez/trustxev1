@@ -49,6 +49,7 @@ class OrdersController extends AppController {
 		$this->Order->id = $id;
 		$getorder=$this->Order->read(null, $id);
 		$this->set('order',$getorder );
+		//debug($getorder);die();
 		$userId = $this->UserAuth->getUserId();
 		$this->loadModel('Usermgmt.User');
 		$user = $this->User->find('list', array(
@@ -60,6 +61,7 @@ class OrdersController extends AppController {
 					if (isset($this->request->data['submit1'])) {
 					$Email = new CakeEmail('smtp');
 					$Email->template('payment');
+					$Email->viewVars(array('order' => $getorder));
 					$Email->emailFormat('both');
 					$Email->from(array('admin@trustxe.com' => 'TrustXe'));
 					$Email->to('intannabilasalim@gmail.com');
