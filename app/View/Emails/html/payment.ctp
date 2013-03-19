@@ -22,7 +22,7 @@
 			<table class="table table-bordered" >
 				<tr>
 					<th colspan="2">
-						<img width="85" height="30" align="right" alt="EURO" src="/img/ambrosia/us.gif" >
+						<img width="85" height="30" align="right" alt="EURO" src="http://trust-xe.com/img/ambrosia/us.gif" >
 						$USD Dollar - Wire Transfer Bank Account
 					</th>
 				</tr>
@@ -60,7 +60,7 @@
 			<p>Local Exchanger</P>
 				 <div class="media">
 					<a class="pull-left" href="#">
-						<img class="media-object" src="/img/ambrosia/maybank.png" width="120">
+						<img class="media-object" src="http://trust-xe.com/img/ambrosia/maybank.png" width="120">
 					</a>
 					<div class="media-body">
 						<h4 class="media-heading">Maybank </h4>
@@ -71,7 +71,7 @@
 				</div>
 				<div class="media">
 					<a class="pull-left" href="#">
-						<img class="media-object" src="/img/ambrosia/cimb.png" width="120">
+						<img class="media-object" src="http://trust-xe.com/img/ambrosia/cimb.png" width="120">
 					</a>
 					<div class="media-body">
 						<h4 class="media-heading">CIMB Bank </h4>
